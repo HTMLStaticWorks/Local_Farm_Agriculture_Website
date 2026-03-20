@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | GreenHarvest CSA - Professional Farming Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+        .service-img-wrap {
+            position: relative;
+            height: 190px;
+            width: 100%;
+            overflow: hidden;
+            /* Curved effect */
+            clip-path: ellipse(90% 70% at 50% 30%);
+            margin-bottom: 2rem;
+            transition: clip-path 0.4s ease, transform 0.4s ease;
+        }
+        .service-card:hover .service-img-wrap {
+            clip-path: ellipse(110% 100% at 50% 40%); /* Flatten the curve slightly */
+        }
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .service-card:hover .service-img-wrap img {
+            transform: scale(1.1);
+        }
+        .service-icon {
+            position: absolute;
+            top: 190px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            border: 4px solid var(--bg-card);
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-content {
+            padding: 1rem 1.8rem 2.8rem;
+        }
+        .service-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+        .service-text {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+        }
+        .service-link {
+            color: var(--primary);
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+        .service-link:hover {
+            gap: 10px;
+            color: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <!-- Top Bar -->
+        <div class="top-bar d-none d-lg-block">
+            <div class="container-fluid p-0">
+                <div class="d-flex justify-content-between align-items-stretch">
+                    <div class="top-bar-left d-flex align-items-center flex-grow-1 ps-5">
+                        <span><i class="bi bi-telephone-fill me-2 text-primary"></i> Call for Order : +00 555 888
+                            222</span>
+                    </div>
+                    <div class="top-bar-right pe-5">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                        style="height: 45px; width: auto;">
+                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                        style="height: 45px; width: auto;">
+                </a>
+
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item mx-2"><a class="nav-link" href="index.html">Home1</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="index-2.html">Home2</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link active" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="bi bi-sun-fill"></i>
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
+                                class="bi bi-person-fill"></i></a>
+                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
+                                class="bi bi-cart-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section style="
+        position: relative;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&fit=crop&q=80') center center / cover no-repeat;
+        background-attachment: fixed;
+    ">
+        <!-- Dark overlay -->
+        <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,35,10,0.72) 0%,rgba(30,80,30,0.55) 100%);z-index:1;"></div>
+
+        <div class="container position-relative text-center" style="z-index:2;" data-aos="fade-up">
+            <span style="display:inline-block;background:rgba(255,255,255,0.12);color:#c5e1a5;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:1.2rem;backdrop-filter:blur(4px);">
+                <i class="bi bi-gear-fill me-2"></i>Professional Agricultural Excellence
+            </span>
+            <h1 style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem;">
+                Our Farm Services
+            </h1>
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
+                    <li class="breadcrumb-item">
+                        <a href="index.html" style="color:#c5e1a5;text-decoration:none;font-weight:500;">
+                            <i class="bi bi-house-fill me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.75);" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Service 1: Fresh Vegetable -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="service-card shadow-sm">
+                        <div class="service-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?w=800&q=80" alt="Fresh Vegetable">
+                        </div>
+                        <div class="service-icon">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Fresh Vegetable</h3>
+                            <p class="service-text">Lorem ipsum dolor sit amet, porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Dairy Products -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card shadow-sm">
+                        <div class="service-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=800" alt="Dairy Products">
+                        </div>
+                        <div class="service-icon">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Dairy Products</h3>
+                            <p class="service-text">Lorem ipsum dolor sit amet, porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Clean Vegetables -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card shadow-sm">
+                        <div class="service-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1557844352-761f2565b576?w=800&q=80" alt="Clean Vegetables">
+                        </div>
+                        <div class="service-icon">
+                            <i class="bi bi-bucket-fill"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Clean Vegetables</h3>
+                            <p class="service-text">Lorem ipsum dolor sit amet, porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Agriculture Products -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card shadow-sm">
+                        <div class="service-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80" alt="Agriculture Products">
+                        </div>
+                        <div class="service-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Agriculture Products</h3>
+                            <p class="service-text">Lorem ipsum dolor sit amet, porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Fixed Background Section -->
+    <section class="section-padding" style="
+            position: relative; 
+            min-height: 450px; 
+            display: flex; 
+            align-items: center; 
+            background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80') center center / cover no-repeat;
+            background-attachment: fixed;
+            margin-top: 2rem;
+        ">
+        <!-- Dark overlay -->
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1;"></div>
+
+        <div class="container position-relative text-center text-white" style="z-index:2;" data-aos="zoom-in">
+            <h2 style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;margin-bottom:1.5rem;line-height:1.2;">
+                Dedicated to Providing the Best <br> <span class="text-primary">Agricultural Services</span>
+            </h2>
+            <p class="lead opacity-75 mx-auto mb-4" style="max-width:700px;">
+                Combining modern technology with traditional farming wisdom to deliver sustainable solutions for a greener future.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="contact.html" class="btn btn-primary btn-lg px-5">Get In Touch</a>
+                <a href="about.html" class="btn btn-outline-light btn-lg px-5">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Food Service Section -->
+    <section class="section-padding" style="background-color: #f7faff;">
+        <div class="container">
+            <!-- Header with Navi Arrows -->
+            <div class="d-pair d-flex flex-wrap justify-content-between align-items-end mb-5" data-aos="fade-up">
+                <div class="section-header text-start mb-0">
+                    <span class="subtitle" style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">We Provide Services</span>
+                    <h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2.3rem; margin-top: 5px;">Best Food Service</h2>
+                </div>
+                <div class="d-flex gap-2 mb-2">
+                    <div id="prevService" class="btn-arrow" style="width: 45px; height: 45px; border: 1px solid #ddd; color: var(--secondary); display: flex; align-items: center; justify-content: center; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="bi bi-arrow-left"></i>
+                    </div>
+                    <div id="nextService" class="btn-arrow" style="width: 45px; height: 45px; background: var(--secondary); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Cards Carousel Wrapper -->
+            <div id="serviceCarousel" class="row g-4 flex-nowrap overflow-hidden" style="scroll-behavior: smooth; margin-bottom: 2rem;">
+                <!-- Service Card 5: Organic Food -->
+                <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up">
+                    <div class="service-card shadow-sm" style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                        <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="Organic Food" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="service-content text-start p-4">
+                            <h3 class="service-title" style="font-size: 1.35rem;">Organic Food</h3>
+                            <p class="service-text" style="font-size: 0.9rem;">Enjoy the purest flavors of nature with our certified organic food selection, grown without synthetic pesticides.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 6: Raw Vegetables -->
+                <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card shadow-sm" style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                        <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
+                            <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800" alt="Raw Vegetables" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="service-content text-start p-4">
+                            <h3 class="service-title" style="font-size: 1.35rem;">Raw Vegetables</h3>
+                            <p class="service-text" style="font-size: 0.9rem;">From farm to table, our raw vegetables are harvested at the peak of freshness to provide maximum nutrients.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 7: Fresh Fruit -->
+                <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card shadow-sm" style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                        <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
+                            <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400c?auto=format&fit=crop&q=80&w=800" alt="Fresh Fruit" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="service-content text-start p-4">
+                            <h3 class="service-title" style="font-size: 1.35rem;">Fresh Fruit</h3>
+                            <p class="service-text" style="font-size: 0.9rem;">Savor the sweetness of the season with our hand-picked variety of fresh fruits, bursting with natural goodness.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Dairy & Milk -->
+                <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card shadow-sm" style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                        <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
+                            <img src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?auto=format&fit=crop&q=80&w=800" alt="Dairy Products" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="service-content text-start p-4">
+                            <h3 class="service-title" style="font-size: 1.35rem;">Dairy & Milk</h3>
+                            <p class="service-text" style="font-size: 0.9rem;">Fresh from our farm's grass-fed cows, our dairy products are processed minimally to preserve their natural flavor.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Bakery Items -->
+                <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card shadow-sm" style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                        <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800" alt="Bakery Items" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="service-content text-start p-4">
+                            <h3 class="service-title" style="font-size: 1.35rem;">Bakery Items</h3>
+                            <p class="service-text" style="font-size: 0.9rem;">Handcrafted using sustainable grains and organic ingredients, our bakery items bring the warmth of home to your table.</p>
+                            <a href="#" class="service-link">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organic Badges Section -->
+    <section class="py-5" style="background: linear-gradient(90deg, #1b5e20 0%, #2e7d32 100%);">
+        <div class="container">
+            <div class="row g-4 align-items-center justify-content-center text-center">
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in">
+                    <div class="badge-item">
+                        <i class="bi bi-shield-check text-white mb-2" style="font-size: 2.5rem;"></i>
+                        <p class="text-white small fw-bold mb-0">100% Organic</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="badge-item">
+                        <i class="bi bi-award text-white mb-2" style="font-size: 2.5rem;"></i>
+                        <p class="text-white small fw-bold mb-0">Premium Quality</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="badge-item">
+                        <i class="bi bi-patch-check text-white mb-2" style="font-size: 2.5rem;"></i>
+                        <p class="text-white small fw-bold mb-0">Certified Farm</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="badge-item">
+                        <i class="bi bi-heart-pulse text-white mb-2" style="font-size: 2.5rem;"></i>
+                        <p class="text-white small fw-bold mb-0">Healthy Living</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="badge-item">
+                        <i class="bi bi-recycle text-white mb-2" style="font-size: 2.5rem;"></i>
+                        <p class="text-white small fw-bold mb-0">Eco Friendly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay in the Loop -->
+    <section class="section-padding" style="
+            position: relative; 
+            overflow: hidden; 
+            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&fit=crop&q=80') center center / cover no-repeat;
+            background-attachment: fixed;
+        ">
+        <!-- Dark overlay over bg image -->
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,10,0.78) 0%,rgba(30,80,30,0.70) 100%);z-index:1;"></div>
+
+        <div class="container text-center position-relative" style="z-index:2;" data-aos="fade-up">
+            <!-- Icon -->
+            <div class="mb-3">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:50%;backdrop-filter:blur(6px);">
+                    <i class="bi bi-envelope-heart-fill" style="font-size:1.75rem;color:#fff;"></i>
+                </span>
+            </div>
+
+            <h2 style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:0.5rem;">Stay in the Loop</h2>
+            <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto 2rem;">
+                Get weekly farm updates, harvest previews, seasonal recipes, and exclusive member-only deals — straight to your inbox.
+            </p>
+
+            <!-- Email form -->
+            <form class="d-flex flex-wrap justify-content-center gap-2 mb-4" onsubmit="return false;">
+                <div style="position:relative;flex:1;min-width:260px;max-width:400px;">
+                    <i class="bi bi-envelope" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
+                    <input type="email" placeholder="Enter your email address" style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="padding:0.85rem 2rem;border-radius:10px;font-weight:700;transition:all 0.3s ease;">Subscribe Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Identical Footer structure ... -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5 text-start">
+                <div class="col-lg-4 col-md-12">
+                    <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                            style="height: 40px; width: auto;">
+                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                            style="height: 40px; width: auto;">
+                    </a>
+                    <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming
+                        since 2010. Real food for real people.</p>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html">Our Story</a></li>
+                        <li class="mb-2"><a href="shop.html">Harvest Boxes</a></li>
+                        <li class="mb-2"><a href="blog.html">Farm Blog</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Membership</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="register.html">Join the CSA</a></li>
+                        <li class="mb-2"><a href="login.html">Member Login</a></li>
+                        <li class="mb-2"><a href="dashboard.html">My Subscription</a></li>
+                        <li class="mb-2"><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Visit Us</h5>
+                    <ul class="list-unstyled footer-info">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <span>123 Farm Lane, Green Valley, GV 12345</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-envelope text-primary me-2"></i>
+                            <span>hello@greenharvest.farm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="opacity-10">
+            <div class="text-center py-4">
+                <p class="mb-0 text-muted small">&copy; 2026 GreenHarvest CSA. All rights reserved. Designed with <i
+                        class="bi bi-heart-fill text-accent"></i> for the Earth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" title="Back to Top">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('serviceCarousel');
+            const prevBtn = document.getElementById('prevService');
+            const nextBtn = document.getElementById('nextService');
+
+            if (carousel && prevBtn && nextBtn) {
+                // Calculate scroll amount based on card width
+                nextBtn.addEventListener('click', () => {
+                    const cardWidth = carousel.querySelector('.col-lg-4').offsetWidth + 24; // width + gap
+                    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    const cardWidth = carousel.querySelector('.col-lg-4').offsetWidth + 24; // width + gap
+                    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | GreenHarvest CSA - Manage Subscription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .sidebar .nav-link {
+            border-radius: 8px;
+            margin: 2px 0;
+            padding: 10px 15px;
+        }
+
+        .sidebar .nav-link.active {
+            background: var(--primary);
+            color: white !important;
+        }
+
+        .dashboard-content {
+            background: var(--bg-alt);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body data-dashboard="user">
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-2 p-0 sidebar bg-white d-none d-lg-block sticky-top">
+                <div class="p-4 border-bottom mb-4">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo"
+                            style="height: 35px; width: auto;">
+                    </a>
+                </div>
+                <div class="px-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="#" class="nav-link active"><i class="bi bi-speedometer2 me-2"></i>
+                                Overview</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted"><i class="bi bi-box-seam me-2"></i>
+                                My Box</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted"><i
+                                    class="bi bi-credit-card me-2"></i> Billing</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted"><i class="bi bi-geo-alt me-2"></i>
+                                Address</a></li>
+                        <hr class="opacity-10">
+                        <li class="nav-item mt-auto"><a href="login.html" class="nav-link text-danger"><i
+                                    class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-10 p-0 dashboard-content">
+                <header class="sticky-top">
+                    <!-- Top Bar -->
+                    <div class="top-bar d-none d-lg-block">
+                        <div class="container-fluid p-0">
+                            <div class="d-flex justify-content-between align-items-stretch">
+                                <div class="top-bar-left d-flex align-items-center flex-grow-1 ps-5">
+                                    <span><i class="bi bi-telephone-fill me-2 text-primary"></i> Call for Order : +00
+                                        555 888 222</span>
+                                </div>
+                                <div class="top-bar-right pe-5">
+                                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Navbar (Unified) -->
+                    <nav class="navbar navbar-expand-lg navbar-custom py-3">
+                        <div class="container-fluid px-4">
+                            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                                <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                                    style="height: 45px; width: auto;">
+                                <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                                    style="height: 45px; width: auto;">
+                            </a>
+
+                            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#mobileSidebar">
+                                <i class="bi bi-list fs-2"></i>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="mainNav">
+                                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+                                    <li class="nav-item mx-2"><a class="nav-link" href="index.html">Home1</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="index-2.html">Home2</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="services.html">Services</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="shop.html">Shop</a></li>
+                                    <li class="nav-item mx-2"><a class="nav-link" href="contact.html">Contact</a></li>
+                                </ul>
+                                <div class="d-flex align-items-center">
+                                    <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+                                        <i class="bi bi-sun-fill"></i>
+                                        <i class="bi bi-moon-stars-fill"></i>
+                                    </button>
+                                    <span class="text-white me-3 d-none d-xl-inline">Welcome, Sarah!</span>
+                                    <a href="#" class="nav-icon-circle" aria-label="Notifications"><i
+                                            class="bi bi-bell-fill"></i></a>
+                                    <a href="login.html" class="nav-icon-circle text-danger" aria-label="Logout"><i
+                                            class="bi bi-box-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="p-4 container">
+                    <!-- Dynamic Stats Row (Rendered by JS) -->
+                    <div id="dashboard-stats" class="row"></div>
+
+                    <div class="row g-4 mt-2">
+                        <!-- My Subscription -->
+                        <div class="col-lg-8">
+                            <div class="card-premium h-100 bg-white shadow-sm border-0">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="fw-bold mb-0">Current Subscription</h5>
+                                    <button class="btn btn-sm btn-outline-primary">Manage</button>
+                                </div>
+                                <div
+                                    class="alert alert-success border-0 bg-light-primary d-flex align-items-center p-4">
+                                    <i class="bi bi-star-fill text-primary fs-3 me-3"></i>
+                                    <div>
+                                        <h6 class="mb-1 text-primary fw-bold">Family Bounty Box</h6>
+                                        <p class="mb-0 small text-muted">Next delivery on Thursday, Oct 24th</p>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <button class="btn btn-sm btn-outline-secondary">Pause Delivery</button>
+                                    </div>
+                                </div>
+                                <h6 class="mt-4 mb-3 fw-bold">Recent Deliveries</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Content</th>
+                                                <th>Status</th>
+                                                <th>Invoice</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>February 17, 2026</td>
+                                                <td>12 Items + Bread</td>
+                                                <td><span class="badge bg-success small">Delivered</span></td>
+                                                <td><a href="#"><i class="bi bi-file-earmark-pdf"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Actions -->
+                        <div class="col-lg-4">
+                            <div class="card-premium bg-white shadow-sm border-0 mb-4">
+                                <h5 class="fw-bold mb-3">Seasonal Recipes</h5>
+                                <div class="border-bottom pb-3 mb-3">
+                                    <p class="mb-1 fw-bold small text-primary">This Week's Highlight</p>
+                                    <h6 class="mb-0">Roasted Root Medley</h6>
+                                    <p class="small text-muted mb-0">Featuring the parsnips in your box.</p>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-light w-100">View All Recipes</a>
+                            </div>
+                            <div class="card-premium bg-white shadow-sm border-0">
+                                <h5 class="fw-bold mb-3">Need Help?</h5>
+                                <p class="small text-muted">Our support team is available Mon-Fri, 9am - 5pm.</p>
+                                <a href="contact.html" class="btn btn-sm btn-primary w-100">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="footer mt-auto">
+                    <div class="container">
+                        <div class="row g-4 mb-5 text-start">
+                            <div class="col-lg-4 col-md-12">
+                                <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                                        style="height: 40px; width: auto;">
+                                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                                        style="height: 40px; width: auto;">
+                                </a>
+                                <p class="text-muted pe-lg-5">Cultivating health and community through sustainable
+                                    organic farming
+                                    since 2010. Real food for real people.</p>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <h5 class="mb-4">Quick Links</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li class="mb-2"><a href="about.html">Our Story</a></li>
+                                    <li class="mb-2"><a href="shop.html">Harvest Boxes</a></li>
+                                    <li class="mb-2"><a href="blog.html">Farm Blog</a></li>
+                                    <li class="mb-2"><a href="services.html">Services</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-4">
+                                <h5 class="mb-4">Membership</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li class="mb-2"><a href="register.html">Join the CSA</a></li>
+                                    <li class="mb-2"><a href="login.html">Member Login</a></li>
+                                    <li class="mb-2"><a href="dashboard.html">My Subscription</a></li>
+                                    <li class="mb-2"><a href="contact.html">Support</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-4">
+                                <h5 class="mb-4">Visit Us</h5>
+                                <ul class="list-unstyled footer-info">
+                                    <li class="mb-3 d-flex align-items-start">
+                                        <i class="bi bi-geo-alt text-primary me-2"></i>
+                                        <span>123 Farm Lane, Green Valley, GV 12345</span>
+                                    </li>
+                                    <li class="mb-3 d-flex align-items-start">
+                                        <i class="bi bi-telephone text-primary me-2"></i>
+                                        <span>(555) 123-4567</span>
+                                    </li>
+                                    <li class="mb-3 d-flex align-items-start">
+                                        <i class="bi bi-envelope text-primary me-2"></i>
+                                        <span>hello@greenharvest.farm</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="opacity-10">
+                        <div class="text-center py-4">
+                            <p class="mb-0 text-muted small">&copy; 2026 GreenHarvest CSA. All rights reserved. Designed
+                                with <i class="bi bi-heart-fill text-accent"></i> for the Earth.</p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+        <!-- Sidebar content same as desktop ... -->
+    </div>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" title="Back to Top">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

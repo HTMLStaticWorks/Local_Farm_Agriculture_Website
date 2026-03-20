@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="50" viewBox="0 0 260 50">
+  <rect width="260" height="50" fill="none" />
+  <path fill="#2E7D32" d="M22,12C7,14 4.9,20.17 3.82,21.34L4.71,26L5.66,23.7C6.14,23.87 6.64,24 7.13,24C10.07,24 13,22.07 15,20C15.89,19.08 16.67,18.06 17.25,16.97C19.26,16.82 21,15.56 21,13.5V6L17,12Z" transform="translate(5, 5) scale(1.2)"/>
+  <text x="45" y="32" font-family="Outfit, sans-serif" font-weight="800" font-size="26" fill="#ffffff">Green<tspan fill="#2E7D32">Harvest</tspan></text>
+</svg>

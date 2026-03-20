@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Shop | GreenHarvest CSA - Subscribe to Weekly Freshness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        /* ── Shop Product Card ── */
+        .shop-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .shop-card:hover {
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        /* Image wrapper – clips everything */
+        .shop-card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 630 / 800;
+        }
+
+        .shop-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .shop-card:hover .shop-card-img {
+            transform: scale(1.07);
+        }
+
+        /* HOT badge */
+        .shop-badge {
+            position: absolute;
+            top: 14px;
+            right: 0;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 14px 4px 10px;
+            clip-path: polygon(8px 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 3;
+        }
+
+        /* Left-side action icons – slide in from left on hover */
+        .shop-actions {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) translateX(-60px);
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            z-index: 4;
+            transition: transform 0.35s ease;
+            background: #fff;
+            border-radius: 0 6px 6px 0;
+            overflow: hidden;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .shop-card:hover .shop-actions {
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .shop-action-btn {
+            background: #fff;
+            border: none;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 1px solid #eee;
+        }
+
+        .shop-action-btn:last-child {
+            border-bottom: none;
+        }
+
+        .shop-action-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Add to Cart bar – slides up from bottom on hover */
+        .shop-add-to-cart {
+            position: absolute;
+            bottom: -52px;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            z-index: 4;
+            transition: bottom 0.35s ease;
+        }
+
+        .shop-card:hover .shop-add-to-cart {
+            bottom: 0;
+        }
+
+        .shop-add-to-cart:hover {
+            background: #000000;
+            color: #fff;
+        }
+
+        /* Card body below image */
+        .shop-card-body {
+            padding: 1rem 1.1rem 1.1rem;
+            background: var(--bg-card);
+            text-align: center;
+        }
+
+        .shop-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .shop-card-price {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .shop-card-price span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Dark mode adjustments */
+        [data-theme="dark"] .shop-action-btn {
+            background: #2c2c2c;
+            color: #f8f9fa;
+            border-color: #444;
+        }
+
+        [data-theme="dark"] .shop-actions {
+            background: #2c2c2c;
+        }
+
+        /* ── Shop Filter Bar ── */
+        .shop-filter-bar {
+            background: var(--bg-body);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .shop-filter-bar .filter-search {
+            position: relative;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .shop-filter-bar .filter-search i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        .shop-filter-bar .filter-search input {
+            padding-left: 2.6rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--border-color);
+            background: var(--bg-alt);
+            color: var(--text-main);
+            height: 44px;
+            width: 100%;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .shop-filter-bar .filter-search input:focus {
+            border-color: var(--primary);
+        }
+
+        .shop-filter-bar select.filter-select {
+            border-radius: 8px;
+            border: 1.5px solid var(--border-color);
+            background: var(--bg-alt);
+            color: var(--text-main);
+            height: 44px;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            min-width: 180px;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .shop-filter-bar select.filter-select:focus {
+            border-color: var(--primary);
+        }
+
+        [data-theme="dark"] .shop-filter-bar .filter-search input,
+        [data-theme="dark"] .shop-filter-bar select.filter-select {
+            background: #2c2c2c;
+            border-color: #444;
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <!-- Top Bar -->
+        <div class="top-bar d-none d-lg-block">
+            <div class="container-fluid p-0">
+                <div class="d-flex justify-content-between align-items-stretch">
+                    <div class="top-bar-left d-flex align-items-center flex-grow-1 ps-5">
+                        <span><i class="bi bi-telephone-fill me-2 text-primary"></i> Call for Order : +00 555 888
+                            222</span>
+                    </div>
+                    <div class="top-bar-right pe-5">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                        style="height: 45px; width: auto;">
+                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                        style="height: 45px; width: auto;">
+                </a>
+
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item mx-2"><a class="nav-link" href="index.html">Home1</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="index-2.html">Home2</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link active" href="shop.html">Shop</a></li>
+                        <li class="nav-item mx-2"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+                            <i class="bi bi-sun-fill"></i>
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
+                                class="bi bi-person-fill"></i></a>
+                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
+                                class="bi bi-cart-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section style="
+        position: relative;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        background: url('https://images.unsplash.com/photo-1500076656116-558758c991c1?w=1600&fit=crop&q=80') center center / cover no-repeat;
+        background-attachment: fixed;
+    ">
+        <!-- Dark overlay -->
+        <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,35,10,0.72) 0%,rgba(30,80,30,0.55) 100%);z-index:1;"></div>
+
+        <div class="container position-relative text-center" style="z-index:2;" data-aos="fade-up">
+            <span style="display:inline-block;background:rgba(255,255,255,0.12);color:#c5e1a5;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:1.2rem;backdrop-filter:blur(4px);">
+                <i class="bi bi-bag-heart-fill me-2"></i>Fresh From the Farm
+            </span>
+            <h1 style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem;">
+                Organic Shop of 30%
+            </h1>
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
+                    <li class="breadcrumb-item">
+                        <a href="index.html" style="color:#c5e1a5;text-decoration:none;font-weight:500;">
+                            <i class="bi bi-house-fill me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.75);" aria-current="page">Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+
+    <!-- Shop Filter Bar -->
+    <div class="shop-filter-bar">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center gap-3">
+
+                <!-- Search Box -->
+                <div class="filter-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="shopSearch" placeholder="Search products...">
+                </div>
+
+                <!-- Category Dropdown -->
+                <select class="filter-select" id="shopCategory" aria-label="Filter by category">
+                    <option value="">All Categories</option>
+                    <option value="small">Small Households</option>
+                    <option value="family">Large Families</option>
+                    <option value="premium">Premium Boxes</option>
+                    <option value="addon">A-La-Carte Add-ons</option>
+                    <option value="organic">Organic Only</option>
+                </select>
+
+                <!-- Price Range Dropdown -->
+                <select class="filter-select" id="shopPrice" aria-label="Filter by price">
+                    <option value="">All Prices</option>
+                    <option value="0-30">Under $30 / week</option>
+                    <option value="30-50">$30 – $50 / week</option>
+                    <option value="50-80">$50 – $80 / week</option>
+                    <option value="80+">$80+ / week</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Product Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?w=630&h=800&fit=crop&q=80"
+                                alt="Harvest Starter Box" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <!-- Side action icons -->
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <!-- Slide-up Add to Cart -->
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Harvest Starter Box</h5>
+                            <p class="shop-card-price">$25.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=630&h=800&fit=crop&q=80"
+                                alt="Family Bounty Box" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Family Bounty Box</h5>
+                            <p class="shop-card-price">$45.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=630&h=800&fit=crop&q=80"
+                                alt="Premium Farm Feast" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Premium Farm Feast</h5>
+                            <p class="shop-card-price">$75.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=630&h=800&fit=crop&q=80"
+                                alt="Veggie Mix Box" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Veggie Mix Box</h5>
+                            <p class="shop-card-price">$30.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=630&h=800&fit=crop&q=80"
+                                alt="Citrus &amp; Greens Box" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Citrus & Greens Box</h5>
+                            <p class="shop-card-price">$35.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="shop-card">
+                        <div class="shop-card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1508747703725-719777637510?w=630&h=800&fit=crop&q=80"
+                                alt="Root Vegetable Box" class="shop-card-img">
+                            <span class="shop-badge">HOT</span>
+                            <div class="shop-actions">
+                                <button class="shop-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+                                <button class="shop-action-btn" title="Compare"><i
+                                        class="bi bi-arrow-left-right"></i></button>
+                                <button class="shop-action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                            </div>
+                            <a href="register.html" class="shop-add-to-cart">Add To Cart</a>
+                        </div>
+                        <div class="shop-card-body">
+                            <h5 class="shop-card-title">Root Vegetable Box</h5>
+                            <p class="shop-card-price">$28.00 <span>/ week</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Stay in the Loop -->
+    <section class="section-padding" style="
+            position: relative;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&fit=crop&q=80') center center / cover no-repeat;
+            background-attachment: fixed;
+        ">
+        <!-- Dark overlay over bg image -->
+        <div
+            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,10,0.78) 0%,rgba(30,80,30,0.70) 100%);z-index:1;">
+        </div>
+
+
+        <div class="container text-center position-relative" style="z-index:2;" data-aos="fade-up">
+            <!-- Icon -->
+            <div class="mb-3">
+                <span
+                    style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:50%;backdrop-filter:blur(6px);">
+                    <i class="bi bi-envelope-heart-fill" style="font-size:1.75rem;color:#fff;"></i>
+                </span>
+            </div>
+
+            <h2
+                style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:0.5rem;">
+                Stay in the Loop</h2>
+            <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto 2rem;">
+                Get weekly farm updates, harvest previews, seasonal recipes, and exclusive member-only deals — straight
+                to your inbox.
+            </p>
+
+            <!-- Email form -->
+            <form class="d-flex flex-wrap justify-content-center gap-2 mb-4" onsubmit="return false;">
+                <div style="position:relative;flex:1;min-width:260px;max-width:400px;">
+                    <i class="bi bi-envelope"
+                        style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
+                    <input type="email" placeholder="Enter your email address"
+                        style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
+                </div>
+                <button type="submit"
+                    style="padding:0.85rem 2rem;border-radius:10px;border:none;font-weight:700;font-size:0.95rem;background:var(--primary);color:#fff;cursor:pointer;transition:background 0.2s,transform 0.2s;white-space:nowrap;"
+                    onmouseover="this.style.background='#1b5e20';this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.background='#2e7d32';this.style.transform='none'">
+                    <i class="bi bi-send me-2"></i>Subscribe Now
+                </button>
+            </form>
+
+            <!-- Trust badges -->
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-shield-check-fill" style="color:#8bc34a;"></i> No spam, ever
+                </span>
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-x-circle-fill" style="color:#8bc34a;"></i> Unsubscribe anytime
+                </span>
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-people-fill" style="color:#8bc34a;"></i> Join 2,000+ members
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5 text-start">
+                <div class="col-lg-4 col-md-12">
+                    <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                            style="height: 40px; width: auto;">
+                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                            style="height: 40px; width: auto;">
+                    </a>
+                    <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming
+                        since 2010. Real food for real people.</p>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html">Our Story</a></li>
+                        <li class="mb-2"><a href="shop.html">Harvest Boxes</a></li>
+                        <li class="mb-2"><a href="blog.html">Farm Blog</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Membership</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="register.html">Join the CSA</a></li>
+                        <li class="mb-2"><a href="login.html">Member Login</a></li>
+                        <li class="mb-2"><a href="dashboard.html">My Subscription</a></li>
+                        <li class="mb-2"><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Visit Us</h5>
+                    <ul class="list-unstyled footer-info">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <span>123 Farm Lane, Green Valley, GV 12345</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-envelope text-primary me-2"></i>
+                            <span>hello@greenharvest.farm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="opacity-10">
+            <div class="text-center py-4">
+                <p class="mb-0 text-muted small">&copy; 2026 GreenHarvest CSA. All rights reserved. Designed with <i
+                        class="bi bi-heart-fill text-accent"></i> for the Earth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" title="Back to Top">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
