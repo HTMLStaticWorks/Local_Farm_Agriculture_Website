@@ -14,16 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 1. Theme Management (Light/Dark)
 function initTheme() {
-    const themeToggle = document.querySelector('#theme-toggle-btn');
-    if (!themeToggle) return;
+    const themeToggles = document.querySelectorAll('.theme-toggle-btn');
+    if (themeToggles.length === 0) return;
 
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
     });
 }
 

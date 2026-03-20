@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the CSA | GreenHarvest CSA - Registration</title>
+    <meta name="description" content="Create a GreenHarvest account to join our Organic CSA and start receiving fresh farm harvests.">
+    <title>Register | GreenHarvest CSA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
@@ -45,9 +46,9 @@
         .auth-logo {
             display: flex;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
-        .auth-logo img { height: 44px; width: auto; }
+        .auth-logo img { height: var(--logo-height); width: auto; }
 
         .auth-form-box h2 {
             font-family: 'Outfit', sans-serif;
@@ -109,13 +110,14 @@
         [data-theme="dark"] .social-login-btn { background: #1e1e1e; border-color: #444; color: #f8f9fa; }
         [data-theme="dark"] .social-login-btn:hover { background: #2c2c2c; }
 
-        /* Theme toggle */
-        .auth-theme-toggle { position: fixed; top: 1.25rem; right: 1.5rem; z-index: 1060; }
+        .auth-theme-toggle { position: absolute; top: 1.25rem; right: 1.5rem; z-index: 1060; }
 
         @media (max-width: 768px) {
+            .auth-theme-toggle { top: 1rem; right: 1rem; }
             .auth-brand-panel { display: none; }
-            .auth-form-panel { padding: 2rem 1.5rem; }
-            html, body { overflow: auto; }
+            .auth-form-panel { padding: 3rem 1rem 1rem; }
+            body, html { height: auto; overflow: auto; }
+            .auth-wrapper { height: auto; min-height: 100vh; padding: 4rem 1rem 2rem; }
         }
     </style>
 </head>
@@ -130,38 +132,33 @@
         </button>
     </div>
 
-    <div class="auth-wrapper">
+    <div class="auth-wrapper position-relative overflow-hidden">
+
+        <!-- Background Decorations -->
+        <div class="bg-decoration pos-1 float-leaf" style="color: #fff; opacity: 0.15; z-index: 0;">
+            <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+        </div>
+        <div class="bg-decoration pos-4 float-leaf" style="color: #fff; opacity: 0.15; z-index: 0; transform: rotate(180deg);">
+            <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+        </div>
 
         <!-- Centered Form Card -->
-        <div class="auth-form-panel">
+        <div class="auth-form-panel" style="z-index: 2;">
             <div class="auth-form-box">
 
                 <!-- Logo centered inside form -->
                 <div class="auth-logo">
                     <a href="index.html">
-                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light">
-                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="brand-logo logo-on-light">
+                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="brand-logo logo-on-dark">
                     </a>
                 </div>
 
-                <h2>Create Your Membership</h2>
-                <p class="auth-subtitle">Already a member? <a href="login.html" class="fw-bold text-primary">Sign in here</a></p>
-
-                <!-- Social Signup -->
-                <div class="d-flex gap-2 mb-2">
-                    <button class="social-login-btn google-btn">
-                        <span class="social-icon"><i class="bi bi-google"></i></span>
-                        Continue with Google
-                    </button>
-                </div>
-                <div class="d-flex gap-2 mb-1">
-                    <button class="social-login-btn facebook-btn">
-                        <span class="social-icon"><i class="bi bi-facebook"></i></span>
-                        Continue with Facebook
-                    </button>
-                </div>
-
-                <div class="auth-divider">or sign up with email</div>
+                <h2>Create Account</h2>
 
                 <!-- Register Form -->
                 <form class="needs-validation" novalidate>
@@ -169,15 +166,18 @@
                         <div class="col-md-6">
                             <label class="form-label" for="regFirst">First Name</label>
                             <input id="regFirst" type="text" class="form-control" placeholder="John" required>
+                            <div class="invalid-feedback">First name is required.</div>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" for="regLast">Last Name</label>
                             <input id="regLast" type="text" class="form-control" placeholder="Doe" required>
+                            <div class="invalid-feedback">Last name is required.</div>
                         </div>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="regEmail">Email Address</label>
                         <input id="regEmail" type="email" class="form-control" placeholder="john@example.com" required>
+                        <div class="invalid-feedback">Please provide a valid email.</div>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="regBox">Choose Your Harvest Box</label>
@@ -190,14 +190,36 @@
                     <div class="row g-2 mb-3">
                         <div class="col-md-6">
                             <label class="form-label" for="regPass">Password</label>
-                            <input id="regPass" type="password" class="form-control" placeholder="••••••••" required>
+                            <input id="regPass" type="password" class="form-control" placeholder="••••••••" required minlength="8">
+                            <div class="invalid-feedback">At least 8 characters.</div>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" for="regConfirm">Confirm Password</label>
                             <input id="regConfirm" type="password" class="form-control" placeholder="••••••••" required>
+                            <div class="invalid-feedback">Passwords must match.</div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Become a Member</button>
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Become a Member</button>
+
+                    <div class="auth-divider">or join with</div>
+
+                    <!-- Social Signup - Same Line -->
+                    <div class="row g-2 mb-1">
+                        <div class="col-6">
+                            <button type="button" class="social-login-btn google-btn">
+                                <span class="social-icon"><i class="bi bi-google"></i></span>
+                                Google
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="social-login-btn facebook-btn">
+                                <span class="social-icon"><i class="bi bi-facebook"></i></span>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="auth-subtitle mt-4 mb-0">Already a member? <a href="login.html" class="fw-bold text-primary">Sign in here</a></p>
                 </form>
 
             </div>
@@ -210,3 +232,5 @@
 </body>
 
 </html>
+
+

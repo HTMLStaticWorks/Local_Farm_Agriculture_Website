@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | GreenHarvest CSA - Get in Touch</title>
+    <meta name="description" content="GreenHarvest - Premium Organic Farm & CSA. Fresh harvest delivered to your door."><title>Contact Us | GreenHarvest CSA - Get in Touch</title>
     <!-- Google Fonts, Bootstrap & CSS same as index.html -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,21 +41,31 @@
         <nav class="navbar navbar-expand-lg navbar-custom py-3">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
-                        style="height: 45px; width: auto;">
-                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
-                        style="height: 45px; width: auto;">
+                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light brand-logo">
+                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark brand-logo">
                 </a>
 
-                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNav">
-                    <i class="bi bi-list fs-2"></i>
-                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme" style="margin: 0;">
+                        <i class="bi bi-sun-fill"></i>
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <button class="navbar-toggler border-0 text-white p-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileNav">
+                        <i class="bi bi-list fs-1 text-primary"></i>
+                    </button>
+                </div>
 
+                <!-- Desktop Navigation -->
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
-                        <li class="nav-item mx-2"><a class="nav-link" href="index.html">Home1</a></li>
-                        <li class="nav-item mx-2"><a class="nav-link" href="index-2.html">Home2</a></li>
+                        <li class="nav-item dropdown mx-2 border-0">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu shadow-sm border-0 rounded-4 mt-2" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item mx-2"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item mx-2"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -63,15 +73,38 @@
                         <li class="nav-item mx-2"><a class="nav-link active" href="contact.html">Contact</a></li>
                     </ul>
                     <div class="d-flex align-items-center">
-                        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+
+                        <button class="theme-toggle-btn d-none d-lg-block" aria-label="Toggle Theme">
                             <i class="bi bi-sun-fill"></i>
                             <i class="bi bi-moon-stars-fill"></i>
                         </button>
-                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
-                                class="bi bi-person-fill"></i></a>
-                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
-                                class="bi bi-cart-fill"></i></a>
+                        <a href="dashboard.html" class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center" aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
+                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i class="bi bi-person-fill"></i></a>
+                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i class="bi bi-cart-fill"></i></a>
                     </div>
+                </div>
+
+                <!-- Mobile Offcanvas Navigation -->
+                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title fw-bold text-primary" id="mobileNavLabel"></h5>
+                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index-2.html">Home 2</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                            <li class="nav-item mt-3">
+                                <a href="dashboard.html" class="btn btn-primary w-100 rounded-pill">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
             </div>
         </nav>
@@ -242,10 +275,8 @@
             <div class="row g-4 mb-5 text-start">
                 <div class="col-lg-4 col-md-12">
                     <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
-                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
-                            style="height: 40px; width: auto;">
-                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
-                            style="height: 40px; width: auto;">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light brand-logo">
+                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark brand-logo">
                     </a>
                     <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming
                         since 2010. Real food for real people.</p>
@@ -304,3 +335,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+

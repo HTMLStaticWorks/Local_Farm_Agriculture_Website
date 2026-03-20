@@ -75,21 +75,33 @@
         <nav class="navbar navbar-expand-lg navbar-custom py-3">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
-                        style="height: 45px; width: auto;">
-                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
-                        style="height: 45px; width: auto;">
+                    <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light brand-logo">
+                    <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark brand-logo">
                 </a>
 
-                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNav">
-                    <i class="bi bi-list fs-2"></i>
-                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme" style="margin: 0;">
+                        <i class="bi bi-sun-fill"></i>
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <button class="navbar-toggler border-0 text-white p-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileNav">
+                        <i class="bi bi-list fs-1 text-primary"></i>
+                    </button>
+                </div>
 
+                <!-- Desktop Navigation -->
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
-                        <li class="nav-item mx-2"><a class="nav-link active" href="index.html">Home1</a></li>
-                        <li class="nav-item mx-2"><a class="nav-link" href="index-2.html">Home2</a></li>
+                        <li class="nav-item dropdown mx-2 border-0">
+                            <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu shadow-sm border-0 rounded-4 mt-2" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item active rounded-3 px-3 py-2 m-1" href="index.html">Home 1</a>
+                                </li>
+                                <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item mx-2"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item mx-2"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -97,16 +109,44 @@
                         <li class="nav-item mx-2"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                     <div class="d-flex align-items-center">
-                        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <button class="theme-toggle-btn d-none d-lg-block" aria-label="Toggle Theme">
                             <i class="bi bi-sun-fill"></i>
                             <i class="bi bi-moon-stars-fill"></i>
                         </button>
+                        <a href="dashboard.html"
+                            class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center"
+                            aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
                         <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
                                 class="bi bi-person-fill"></i></a>
                         <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
                                 class="bi bi-cart-fill"></i></a>
                     </div>
                 </div>
+
+                <!-- Mobile Offcanvas Navigation -->
+                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav"
+                    aria-labelledby="mobileNavLabel">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title fw-bold text-primary" id="mobileNavLabel"></h5>
+                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index-2.html">Home 2</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item mt-3">
+                                <a href="dashboard.html" class="btn btn-primary w-100 rounded-pill">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -133,12 +173,12 @@
         <div class="container position-relative z-1">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-white text-center" data-aos="fade-up">
-                    <span class="badge bg-secondary mb-3 px-3 py-2 fs-6">Experience Farm-to-Table</span>
+                    <span class="badge mb-3 px-3 py-2 fs-6">Experience Farm-to-Table</span>
                     <h1 class="display-large mb-4">Fresh Organic Produce, <br>Direct From Our Farm.</h1>
                     <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 800px;">Support local agriculture and
                         enjoy seasonal harvests delivered weekly to your doorstep. Healthy, sustainable, and purely
                         organic.</p>
-                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
                         <a href="shop.html" class="btn btn-primary btn-lg px-4 fs-6">View Harvest Boxes</a>
                         <a href="services.html" class="btn btn-light btn-lg px-4 fs-6">Learn More</a>
                     </div>
@@ -168,12 +208,7 @@
                     d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
-        <div class="bg-decoration pos-5 float-leaf" style="opacity: 0.2;">
-            <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14Z" />
-            </svg>
-        </div>
+
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title mx-auto text-center" style="width: fit-content;">Why Choose GreenHarvest?</h2>
@@ -285,22 +320,20 @@
             </svg>
         </div>
         <div class="container">
-            <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-up">
-                <div>
-                    <h2 class="section-title mb-0">Seasonal Harvest Boxes</h2>
-                    <p class="text-muted mb-0">Pick the plan that fits your family's appetite.</p>
-                </div>
-                <a href="shop.html" class="btn btn-outline-secondary d-none d-md-block">Browse All Plans</a>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title mx-auto text-center">Seasonal Harvest Boxes</h2>
+                <p class="text-muted mx-auto">Pick the plan that fits your family's appetite.</p>
+                <a href="shop.html" class="btn btn-outline-secondary mt-3 d-inline-block d-md-none">Browse All Plans</a>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 d-flex align-items-stretch">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm">
+                    <div class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm d-flex flex-column" style="border-top: 4px solid transparent !important;">
                         <div class="ratio ratio-4x3 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800"
+                            <img src="https://pixenio.com/storage/nmvp/3733/optim_markus-spiske-139525-unsplash.jpg"
                                 alt="Harvest Starter Box"
                                 class="object-fit-cover w-100 h-100 transition-transform hover-zoom">
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-primary">Small Family</span>
                                 <h4 class="mb-0 text-primary">$25/wk</h4>
@@ -308,40 +341,40 @@
                             <h3 class="h4">Harvest Starter Box</h3>
                             <p class="text-muted small mb-4">5-7 varieties of seasonal vegetables and herbs. Perfect for
                                 singles or couples.</p>
-                            <a href="shop.html" class="btn btn-primary w-100">Subscribe Now</a>
+                            <a href="shop.html" class="btn btn-primary w-100 mt-auto">Subscribe Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Box 2 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm border-top border-secondary border-4">
+                        class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm border-top border-secondary border-4 d-flex flex-column">
                         <div class="ratio ratio-4x3 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1506484334402-4ecff2cf6626?auto=format&fit=crop&q=80&w=800"
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
                                 alt="Family Bounty Box"
                                 class="object-fit-cover w-100 h-100 transition-transform hover-zoom">
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge bg-secondary">Most Popular</span>
+                                <span class="badge bg-primary">Most Popular</span>
                                 <h4 class="mb-0 text-primary">$45/wk</h4>
                             </div>
                             <h3 class="h4">Family Bounty Box</h3>
                             <p class="text-muted small mb-4">10-12 varieties of produce + 2 specialty pantry items. Fits
                                 families of 3-4.</p>
-                            <a href="shop.html" class="btn btn-primary w-100">Subscribe Now</a>
+                            <a href="shop.html" class="btn btn-primary w-100 mt-auto">Subscribe Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Box 3 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm">
+                    <div class="card-premium h-100 overflow-hidden p-0 border-0 shadow-sm d-flex flex-column" style="border-top: 4px solid transparent !important;">
                         <div class="ratio ratio-4x3 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1488459711615-228239793f4e?auto=format&fit=crop&q=80&w=800"
+                            <img src="https://saarinenorganics.com/cdn/shop/files/herbs.jpg?v=1714523657&width=2000"
                                 alt="Whole Farm Experience"
                                 class="object-fit-cover w-100 h-100 transition-transform hover-zoom">
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-accent">Premium</span>
                                 <h4 class="mb-0 text-primary">$75/wk</h4>
@@ -349,7 +382,7 @@
                             <h3 class="h4">Whole Farm Experience</h3>
                             <p class="text-muted small mb-4">Full produce load + pasture-raised eggs + fresh artisanal
                                 bread + flowers.</p>
-                            <a href="shop.html" class="btn btn-primary w-100">Subscribe Now</a>
+                            <a href="shop.html" class="btn btn-primary w-100 mt-auto">Subscribe Now</a>
                         </div>
                     </div>
                 </div>
@@ -385,10 +418,14 @@
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
-                            alt="Sarah Jenkins" class="testimonial-author-img">
-                        <h5 class="testimonial-author-name">Sarah Jenkins</h5>
-                        <p class="testimonial-author-role">Member since 2021</p>
+                        <div class="testimonial-author-wrapper">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+                                alt="Sarah Jenkins" class="testimonial-author-img">
+                            <div class="author-info">
+                                <h5 class="testimonial-author-name">Sarah Jenkins</h5>
+                                <p class="testimonial-author-role">Member since 2021</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -405,10 +442,14 @@
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
-                            alt="David Miller" class="testimonial-author-img">
-                        <h5 class="testimonial-author-name">David Miller</h5>
-                        <p class="testimonial-author-role">Local Chef & Member</p>
+                        <div class="testimonial-author-wrapper">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
+                                alt="David Miller" class="testimonial-author-img">
+                            <div class="author-info">
+                                <h5 class="testimonial-author-name">David Miller</h5>
+                                <p class="testimonial-author-role">Local Chef & Member</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Box 3 -->
@@ -426,48 +467,76 @@
                             <i class="bi bi-star-fill"></i>
                             <i class="bi bi-star-fill"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
-                            alt="Elena Rodriguez" class="testimonial-author-img">
-                        <h5 class="testimonial-author-name">Elena Rodriguez</h5>
-                        <p class="testimonial-author-role">Sustainable Advocate</p>
+                        <div class="testimonial-author-wrapper">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+                                alt="Elena Rodriguez" class="testimonial-author-img">
+                            <div class="author-info">
+                                <h5 class="testimonial-author-name">Elena Rodriguez</h5>
+                                <p class="testimonial-author-role">Sustainable Advocate</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="section-padding bg-primary text-white position-relative overflow-hidden">
-        <div class="bg-decoration float-leaf" style="top: -20px; left: -20px; color: #fff; opacity: 0.15;">
-            <svg class="decoration-leaf" viewBox="0 0 24 24" style="width: 10rem; height: 10rem;" fill="currentColor">
-                <path
-                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
-            </svg>
+    <!-- Stay in the Loop -->
+    <section class="section-padding" style="
+            position: relative;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&fit=crop&q=80') center center / cover no-repeat;
+            background-attachment: fixed;
+        ">
+        <!-- Dark overlay over bg image -->
+        <div
+            style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,10,0.78) 0%,rgba(30,80,30,0.70) 100%);z-index:1;">
         </div>
-        <div class="bg-decoration float-leaf" style="bottom: -20px; right: -20px; color: #fff; opacity: 0.15;">
-            <svg class="decoration-leaf" viewBox="0 0 24 24" style="width: 10rem; height: 10rem;" fill="currentColor">
-                <path
-                    d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14Z" />
-            </svg>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <h2 class="mb-1">Stay in the Loop</h2>
-                    <p class="mb-0 opacity-75">Get seasonal recipes, farm updates, and early access to specialty crop
-                        boxes.</p>
+
+        <div class="container text-center position-relative" style="z-index:2;" data-aos="fade-up">
+            <!-- Icon -->
+            <div class="mb-3">
+                <span
+                    style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:50%;backdrop-filter:blur(6px);">
+                    <i class="bi bi-envelope-heart-fill" style="font-size:1.75rem;color:#fff;"></i>
+                </span>
+            </div>
+
+            <h2
+                style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:0.5rem;">
+                Stay in the Loop</h2>
+            <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto 2rem;">
+                Get weekly farm updates, harvest previews, seasonal recipes, and exclusive member-only deals — straight
+                to your inbox.
+            </p>
+
+            <!-- Email form -->
+            <form class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-2 mb-4 mx-auto" style="max-width: 600px;" onsubmit="return false;">
+                <div style="position:relative;flex:1;min-width:260px;max-width:400px;">
+                    <i class="bi bi-envelope"
+                        style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
+                    <input type="email" placeholder="Enter your email address"
+                        style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <form class="row g-2">
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control form-control-lg border-0"
-                                placeholder="Enter your email">
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-secondary btn-lg w-100 border-0">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+                <button type="submit"
+                    style="padding:0.85rem 2rem;border-radius:10px;border:none;font-weight:700;font-size:0.95rem;background:var(--primary);color:#fff;cursor:pointer;transition:background 0.2s,transform 0.2s;white-space:nowrap;"
+                    onmouseover="this.style.background='#1b5e20';this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.background='#2e7d32';this.style.transform='none'">
+                    <i class="bi bi-send me-2"></i>Subscribe Now
+                </button>
+            </form>
+
+            <!-- Trust badges -->
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-shield-check-fill" style="color:#8bc34a;"></i> No spam, ever
+                </span>
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-x-circle-fill" style="color:#8bc34a;"></i> Unsubscribe anytime
+                </span>
+                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                    <i class="bi bi-people-fill" style="color:#8bc34a;"></i> Join 2,000+ members
+                </span>
             </div>
         </div>
     </section>
@@ -478,10 +547,8 @@
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-12">
                     <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
-                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
-                            style="height: 40px; width: auto;">
-                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
-                            style="height: 40px; width: auto;">
+                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light brand-logo">
+                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark brand-logo">
                     </a>
                     <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming
                         since 2010. Real food for real people.</p>
