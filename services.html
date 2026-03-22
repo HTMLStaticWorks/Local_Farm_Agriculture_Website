@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GreenHarvest - Premium Organic Farm & CSA. Fresh harvest delivered to your door."><title>Our Services | GreenHarvest CSA - Professional Farming Solutions</title>
+    <meta name="description" content="GreenHarvest - Premium Organic Farm & CSA. Fresh harvest delivered to your door.">
+    <title>Our Services | GreenHarvest CSA - Professional Farming Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -112,6 +113,43 @@
             gap: 10px;
             color: #1b5e20;
         }
+
+        .btn-arrow {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        #prevService.btn-arrow {
+            border: 1px solid var(--primary);
+            color: #fff;
+            background: var(--primary);
+        }
+
+        #nextService.btn-arrow {
+            background: var(--primary);
+            color: #fff;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-arrow:hover {
+            background: var(--primary) !important;
+            border-color: var(--primary) !important;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+        }
+
+        [data-theme="dark"] #prevService.btn-arrow {
+            border-color: #444;
+        }
     </style>
 </head>
 
@@ -144,7 +182,8 @@
                 </a>
 
                 <div class="d-flex align-items-center gap-2">
-                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme" style="margin: 0;">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme"
+                        style="margin: 0;">
                         <i class="bi bi-sun-fill"></i>
                         <i class="bi bi-moon-stars-fill"></i>
                     </button>
@@ -157,8 +196,9 @@
                 <!-- Desktop Navigation -->
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
-                        <li class="nav-item dropdown mx-2 border-0">
-                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                        <li class="nav-item dropdown mx-2 border-0 click-triggered">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu shadow-sm border-0 rounded-4 mt-2" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index-2.html">Home 2</a></li>
@@ -176,17 +216,23 @@
                             <i class="bi bi-sun-fill"></i>
                             <i class="bi bi-moon-stars-fill"></i>
                         </button>
-                        <a href="dashboard.html" class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center" aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
-                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i class="bi bi-person-fill"></i></a>
-                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i class="bi bi-cart-fill"></i></a>
+                        <a href="dashboard.html"
+                            class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center"
+                            aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
+                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
+                                class="bi bi-person-fill"></i></a>
+                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
+                                class="bi bi-cart-fill"></i></a>
                     </div>
                 </div>
 
                 <!-- Mobile Offcanvas Navigation -->
-                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav"
+                    aria-labelledby="mobileNavLabel">
                     <div class="offcanvas-header border-bottom">
                         <h5 class="offcanvas-title fw-bold text-primary" id="mobileNavLabel"></h5>
-                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="nav flex-column">
@@ -203,7 +249,7 @@
                         </ul>
                     </div>
                 </div>
-                </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -221,12 +267,15 @@
         <!-- Background Decorations -->
         <div class="bg-decoration pos-1 float-leaf" style="color: #fff; opacity: 0.2; z-index: 2;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
-        <div class="bg-decoration pos-4 float-leaf" style="color: #fff; opacity: 0.2; z-index: 2; transform: rotate(180deg);">
+        <div class="bg-decoration pos-4 float-leaf"
+            style="color: #fff; opacity: 0.2; z-index: 2; transform: rotate(180deg);">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
 
@@ -265,20 +314,24 @@
         <!-- Background Decorations -->
         <div class="bg-decoration pos-top-left float-leaf" style="color: var(--primary); opacity: 0.08;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
-        <div class="bg-decoration pos-bottom-right float-leaf" style="color: var(--primary); opacity: 0.08; transform: rotate(180deg);">
+        <div class="bg-decoration pos-bottom-right float-leaf"
+            style="color: var(--primary); opacity: 0.08; transform: rotate(180deg);">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
         <div class="bg-decoration pos-2 float-leaf" style="color: var(--primary); opacity: 0.05;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
-        
+
         <div class="container position-relative" style="z-index: 2;">
             <div class="row g-4">
                 <!-- Service 1: Fresh Vegetable -->
@@ -373,12 +426,14 @@
         <!-- Background Decorations -->
         <div class="bg-decoration pos-1 float-leaf" style="color: #fff; opacity: 0.2; z-index: 2;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
         <div class="bg-decoration pos-3 float-leaf" style="color: #fff; opacity: 0.2; z-index: 2;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
 
@@ -402,11 +457,12 @@
     </section>
 
     <!-- Best Food Service Section -->
-    <section class="section-padding position-relative overflow-hidden" style="background-color: #f7faff;">
+    <section class="section-padding position-relative overflow-hidden bg-alt">
         <!-- Background Decorations -->
         <div class="bg-decoration pos-top-left float-leaf" style="opacity: 0.08;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
         <div class="container position-relative" style="z-index: 2;">
@@ -421,12 +477,10 @@
                         Best Food Service</h2>
                 </div>
                 <div class="d-flex gap-2 mb-2">
-                    <div id="prevService" class="btn-arrow"
-                        style="width: 45px; height: 45px; border: 1px solid #ddd; color: var(--secondary); display: flex; align-items: center; justify-content: center; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">
+                    <div id="prevService" class="btn-arrow">
                         <i class="bi bi-arrow-left"></i>
                     </div>
-                    <div id="nextService" class="btn-arrow"
-                        style="width: 45px; height: 45px; background: var(--secondary); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">
+                    <div id="nextService" class="btn-arrow">
                         <i class="bi bi-arrow-right"></i>
                     </div>
                 </div>
@@ -437,8 +491,7 @@
                 style="scroll-behavior: smooth; margin-bottom: 2rem;">
                 <!-- Service Card 5: Organic Food -->
                 <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up">
-                    <div class="service-card shadow-sm"
-                        style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                    <div class="service-card shadow-sm">
                         <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
                             <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800"
                                 alt="Organic Food" style="width: 100%; height: 100%; object-fit: cover;">
@@ -454,8 +507,7 @@
 
                 <!-- Service Card 6: Raw Vegetables -->
                 <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card shadow-sm"
-                        style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                    <div class="service-card shadow-sm">
                         <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
                             <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800"
                                 alt="Raw Vegetables" style="width: 100%; height: 100%; object-fit: cover;">
@@ -471,8 +523,7 @@
 
                 <!-- Service Card 7: Fresh Fruit -->
                 <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card shadow-sm"
-                        style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                    <div class="service-card shadow-sm">
                         <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
                             <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=800"
                                 alt="Fresh Fruit" style="width: 100%; height: 100%; object-fit: cover;">
@@ -488,8 +539,7 @@
 
                 <!-- Card 8: Dairy & Milk -->
                 <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card shadow-sm"
-                        style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                    <div class="service-card shadow-sm">
                         <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
                             <img src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&q=80&w=800"
                                 alt="Dairy Products" style="width: 100%; height: 100%; object-fit: cover;">
@@ -505,8 +555,7 @@
 
                 <!-- Card 9: Bakery Items -->
                 <div class="col-lg-4 col-md-6 flex-shrink-0" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card shadow-sm"
-                        style="background: #fff; border-radius: 12px; overflow: hidden; height: 100%;">
+                    <div class="service-card shadow-sm">
                         <div class="service-img-wrap" style="height: 240px; overflow: hidden; margin-bottom: 0;">
                             <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800"
                                 alt="Bakery Items" style="width: 100%; height: 100%; object-fit: cover;">
@@ -596,7 +645,7 @@
                     <i class="bi bi-envelope"
                         style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
                     <input type="email" placeholder="Enter your email address"
-                        style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
+                        style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:var(--bg-body);color:var(--text-main);">
                 </div>
                 <button type="submit" class="btn btn-primary"
                     style="padding:0.85rem 2rem;border-radius:10px;font-weight:700;transition:all 0.3s ease;">Subscribe
@@ -617,6 +666,12 @@
                     </a>
                     <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming
                         since 2010. Real food for real people.</p>
+                    <div class="footer-social-icons mt-4">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-4">
                     <h5 class="mb-4">Quick Links</h5>
@@ -692,10 +747,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-

@@ -61,4 +61,18 @@ function renderAdminDashboard() {
             </div>
         </div>
     `).join('');
+
+    // Auto-close sidebar on mobile/tablet when a link is clicked
+    const sidebarLinks = document.querySelectorAll('.offcanvas .nav-link');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const offcanvasElement = link.closest('.offcanvas');
+            if (offcanvasElement) {
+                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+                if (offcanvasInstance) {
+                    offcanvasInstance.hide();
+                }
+            }
+        });
+    });
 }
