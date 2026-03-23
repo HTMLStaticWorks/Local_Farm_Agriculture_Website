@@ -60,13 +60,13 @@
 [data-theme="dark"] {
     --bg-body: #121212;
     --bg-card: #1e1e1e;
-    --bg-alt: #2c2c2c;
+    --bg-alt: #1a1a1a; /* Darker bg-alt for better contrast in dashboard */
     --text-main: #f8f9fa;
     --text-muted: #adb5bd;
-    --border-color: #444444;
+    --border-color: #333333; /* Subtler border */
     --nav-bg: #121212;
     --footer-bg: #121212;
-    --shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    --shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 /* Global Bootstrap Overrides - Brand Primary */
@@ -133,7 +133,8 @@
 
 [data-theme="dark"] .card-premium.bg-white,
 [data-theme="dark"] .bg-white,
-[data-theme="dark"] .bg-light {
+[data-theme="dark"] .bg-light,
+[data-theme="dark"] .bg-light-alt {
     background-color: var(--bg-card) !important;
     color: var(--text-main) !important;
 }
@@ -144,6 +145,61 @@
 
 [data-theme="dark"] .bg-alt {
     background-color: var(--bg-alt) !important;
+}
+
+/* Dashboard Specific Dark Mode Fixes */
+[data-theme="dark"] .dashboard-header,
+[data-theme="dark"] .sidebar {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .table-light {
+    --bs-table-bg: #222222 !important;
+    --bs-table-color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .table {
+    --bs-table-bg: #1e1e1e !important;
+    --bs-table-striped-bg: #252525 !important;
+    --bs-table-active-bg: #2c2c2c !important;
+    --bs-table-hover-bg: #323232 !important;
+    --bs-table-color: var(--text-main) !important;
+    --bs-table-border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .table-light {
+    --bs-table-bg: #2c2c2c !important;
+    --bs-table-color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .table tr,
+[data-theme="dark"] .table td,
+[data-theme="dark"] .table th {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover > * {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .bg-light-primary {
+    background-color: rgba(46, 125, 50, 0.15) !important;
+    border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .offcanvas {
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+}
+
+/* Ensure all links in dark mode are readable */
+[data-theme="dark"] a:not(.btn):not(.nav-link) {
+    color: #8bc34a;
 }
 
 [data-theme="dark"] .text-dark {
@@ -332,11 +388,6 @@
 }
 
 
-
-/* RTL Support */
-[dir="rtl"] {
-    text-align: right;
-}
 
 /* 2. Reset & Base */
 * {
@@ -631,9 +682,10 @@ a {
     z-index: -1;
 }
 
+
 .top-bar-right a {
     color: #fff;
-    margin-left: 18px;
+    margin-inline-start: 18px; /* Use logical property */
     font-size: 0.9rem;
     position: relative;
     display: inline-block;
@@ -679,7 +731,51 @@ a {
 
 .navbar-custom .nav-link i.bi-chevron-down {
     font-size: 0.7rem;
-    margin-left: 5px;
+    margin-inline-start: 5px;
+}
+
+/* Navbar Responsiveness for 1024px - 1280px */
+@media (min-width: 992px) and (max-width: 1280px) {
+    .navbar-custom .nav-link {
+        padding: 0.5rem 6px !important;
+        font-size: 0.9rem;
+    }
+    .navbar-nav .nav-item.mx-2 {
+        margin-left: 0.15rem !important;
+        margin-right: 0.15rem !important;
+    }
+    .nav-icon-circle {
+        margin-inline-start: 6px;
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    .theme-toggle-btn, .rtl-toggle-btn {
+        margin-inline-start: 4px;
+        font-size: 1rem;
+    }
+    .navbar-custom .btn-primary.show-on-desktop {
+        margin-inline-start: 6px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 36px;
+        height: 36px;
+        padding: 0 !important;
+    }
+    .navbar-brand .brand-logo {
+        height: 30px;
+    }
+    .navbar-custom .container {
+        max-width: 940px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .nav-icon-circle:last-child {
+        margin-inline-end: 10px;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.5rem 4px !important;
+    }
 }
 
 /* Dropdown Hover Animation */
@@ -718,7 +814,7 @@ a {
     color: var(--primary);
     font-size: 1.1rem;
     transition: var(--transition);
-    margin-left: 12px;
+    margin-inline-start: 12px;
 }
 
 .nav-icon-circle:hover {
@@ -798,6 +894,10 @@ footer hr {
 /* Utilities */
 .text-primary {
     color: var(--primary) !important;
+}
+
+.bg-light-primary {
+    background-color: rgba(46, 125, 50, 0.1) !important;
 }
 
 .text-secondary {
@@ -894,11 +994,6 @@ footer hr {
     margin-left: 15px;
 }
 
-[dir="rtl"] .theme-toggle-btn, 
-[dir="rtl"] .rtl-toggle-btn {
-    margin-left: 0;
-    margin-right: 15px;
-}
 
 .theme-toggle-btn:hover, .rtl-toggle-btn:hover {
     color: var(--primary);
