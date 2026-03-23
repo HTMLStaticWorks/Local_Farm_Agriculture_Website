@@ -104,6 +104,7 @@
                                 <i class="bi bi-sun-fill"></i>
                                 <i class="bi bi-moon-stars-fill"></i>
                             </button>
+<button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
                             <span class="text-main fw-medium mx-2 d-none d-lg-inline">
                                 <img src="assets/images/admin_avatar.png" alt="Admin"
                                     class="rounded-circle me-2 border border-2 border-primary"
@@ -199,10 +200,12 @@
 
                     <div class="tab-pane fade" id="orders" role="tabpanel">
                         <div class="card-premium h-100 bg-white shadow-sm border-0">
-                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
                                 <h5 class="fw-bold mb-0">Order Management</h5>
                                 <div class="d-flex gap-2">
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-filter"></i> Filter</button>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-filter"></i>
+                                        Filter</button>
                                     <button class="btn btn-sm btn-primary">Process All</button>
                                 </div>
                             </div>
@@ -223,21 +226,21 @@
                                             <td>Sarah Jenkins</td>
                                             <td>Mar 24, 2026</td>
                                             <td>Family Bounty</td>
-                                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                            <td><span class="badge  text-dark">Pending</span></td>
                                         </tr>
                                         <tr>
                                             <td>#GH-2023</td>
                                             <td>Michael Chen</td>
                                             <td>Mar 24, 2026</td>
                                             <td>Premium Feast</td>
-                                            <td><span class="badge bg-success">Ready</span></td>
+                                            <td><span class="badge text-dark">Ready</span></td>
                                         </tr>
                                         <tr>
                                             <td>#GH-2022</td>
                                             <td>Emma Wilson</td>
                                             <td>Mar 23, 2026</td>
                                             <td>Starter Box</td>
-                                            <td><span class="badge bg-info">Shipped</span></td>
+                                            <td><span class="badge text-dark">Shipped</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -247,7 +250,8 @@
 
                     <div class="tab-pane fade" id="customers" role="tabpanel">
                         <div class="card-premium h-100 bg-white shadow-sm border-0">
-                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
                                 <h5 class="fw-bold mb-0">Member Directory</h5>
                                 <button class="btn btn-sm btn-primary"><i class="bi bi-plus"></i> Add Member</button>
                             </div>
@@ -265,21 +269,25 @@
                                     <tbody>
                                         <tr>
                                             <td class="d-flex align-items-center">
-                                                <div class="bg-light p-2 rounded-circle me-2"><i class="bi bi-person text-primary"></i></div>
+                                                <div class="bg-light p-2 rounded-circle me-2"><i
+                                                        class="bi bi-person text-primary"></i></div>
                                                 <span>Jane Cooper</span>
                                             </td>
                                             <td>Jan 12, 2025</td>
-                                            <td><span class="badge border border-primary text-primary">Premium</span></td>
+                                            <td><span class="badge border border-primary text-primary">Premium</span>
+                                            </td>
                                             <td>42</td>
                                             <td><button class="btn btn-sm btn-light">View</button></td>
                                         </tr>
                                         <tr>
                                             <td class="d-flex align-items-center">
-                                                <div class="bg-light p-2 rounded-circle me-2"><i class="bi bi-person text-primary"></i></div>
+                                                <div class="bg-light p-2 rounded-circle me-2"><i
+                                                        class="bi bi-person text-primary"></i></div>
                                                 <span>Robert Fox</span>
                                             </td>
                                             <td>Feb 15, 2025</td>
-                                            <td><span class="badge border border-success text-success">Bounty</span></td>
+                                            <td><span class="badge border border-success text-success">Bounty</span>
+                                            </td>
                                             <td>28</td>
                                             <td><button class="btn btn-sm btn-light">View</button></td>
                                         </tr>
@@ -291,7 +299,8 @@
 
                     <div class="tab-pane fade" id="inventory" role="tabpanel">
                         <div class="card-premium h-100 bg-white shadow-sm border-0">
-                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
                                 <h5 class="fw-bold mb-0">Stock Overview</h5>
                                 <button class="btn btn-sm btn-primary">Update Log</button>
                             </div>
@@ -366,7 +375,8 @@
                                     </div>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="smsNotif">
-                                        <label class="form-check-label" for="smsNotif">SMS on delivery completion</label>
+                                        <label class="form-check-label" for="smsNotif">SMS on delivery
+                                            completion</label>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary px-4">Save Changes</button>

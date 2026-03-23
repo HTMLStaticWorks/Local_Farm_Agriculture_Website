@@ -879,8 +879,8 @@ footer hr {
     transform: translateY(-5px);
 }
 
-/* Theme Toggle Icon */
-.theme-toggle-btn {
+/* Theme & RTL Toggle Icons */
+.theme-toggle-btn, .rtl-toggle-btn {
     background: none;
     border: none;
     color: var(--text-main);
@@ -894,9 +894,20 @@ footer hr {
     margin-left: 15px;
 }
 
-.theme-toggle-btn:hover {
+[dir="rtl"] .theme-toggle-btn, 
+[dir="rtl"] .rtl-toggle-btn {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.theme-toggle-btn:hover, .rtl-toggle-btn:hover {
     color: var(--primary);
     transform: rotate(15deg);
+}
+
+.rtl-toggle-btn {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 [data-theme="dark"] .bi-sun-fill {

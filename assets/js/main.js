@@ -31,13 +31,22 @@ function initTheme() {
 
 // 2. RTL Support
 function initRTL() {
-    const rtlToggle = document.querySelector('#rtl-toggle');
-    if (!rtlToggle) return;
+    const rtlToggles = document.querySelectorAll('.rtl-toggle-btn, #rtl-toggle');
+    if (rtlToggles.length === 0) return;
 
-    rtlToggle.addEventListener('click', () => {
-        const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-        document.documentElement.setAttribute('dir', newDir);
+    // Load initial state
+    const isRTL = localStorage.getItem('isRTL') === 'true';
+    if (isRTL) {
+        document.documentElement.setAttribute('dir', 'rtl');
+    }
+
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            document.documentElement.setAttribute('dir', newDir);
+            localStorage.setItem('isRTL', newDir === 'rtl' ? 'true' : 'false');
+        });
     });
 }
 
