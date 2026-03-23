@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm Blog | GreenHarvest CSA - News & Recipes</title>
-    <meta name="description" content="Read the latest farm updates, seasonal recipes, and sustainability news from the GreenHarvest CSA team.">
+    <meta name="description"
+        content="Read the latest farm updates, seasonal recipes, and sustainability news from the GreenHarvest CSA team.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -27,15 +30,18 @@
             display: flex;
             flex-direction: column;
         }
+
         .blog-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
         }
+
         .blog-img-wrap {
             position: relative;
             overflow: hidden;
             aspect-ratio: 16 / 10;
         }
+
         .blog-img-wrap img {
             width: 100%;
             height: 100%;
@@ -43,9 +49,11 @@
             display: block;
             transition: transform 0.5s ease;
         }
+
         .blog-card:hover .blog-img-wrap img {
             transform: scale(1.06);
         }
+
         .blog-category-badge {
             position: absolute;
             top: 14px;
@@ -60,12 +68,14 @@
             border-radius: 30px;
             z-index: 2;
         }
+
         .blog-card-body {
             padding: 1.4rem 1.5rem 1.6rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
+
         .blog-meta {
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -74,7 +84,11 @@
             gap: 14px;
             margin-bottom: 0.6rem;
         }
-        .blog-meta i { color: var(--primary, #2e7d32); }
+
+        .blog-meta i {
+            color: var(--primary, #2e7d32);
+        }
+
         .blog-card-title {
             font-family: 'Outfit', sans-serif;
             font-size: 1.15rem;
@@ -83,12 +97,17 @@
             margin-bottom: 0.5rem;
             line-height: 1.4;
         }
+
         .blog-card-title a {
             color: inherit;
             text-decoration: none;
             transition: color 0.2s;
         }
-        .blog-card-title a:hover { color: var(--primary, #2e7d32); }
+
+        .blog-card-title a:hover {
+            color: var(--primary, #2e7d32);
+        }
+
         .blog-excerpt {
             font-size: 0.88rem;
             color: var(--text-muted);
@@ -101,6 +120,7 @@
             overflow: hidden;
             min-height: 3em;
         }
+
         .blog-read-more {
             font-size: 0.85rem;
             font-weight: 700;
@@ -112,7 +132,11 @@
             gap: 6px;
             transition: gap 0.2s;
         }
-        .blog-read-more:hover { gap: 10px; color: var(--primary, #2e7d32); }
+
+        .blog-read-more:hover {
+            gap: 10px;
+            color: var(--primary, #2e7d32);
+        }
 
         /* ── Author row ── */
         .blog-author-avatar {
@@ -130,6 +154,7 @@
             padding: 1.5rem;
             margin-bottom: 1.75rem;
         }
+
         .sidebar-widget-title {
             font-family: 'Outfit', sans-serif;
             font-size: 1.05rem;
@@ -140,6 +165,7 @@
             border-bottom: 2px solid var(--primary, #2e7d32);
             display: inline-block;
         }
+
         .sidebar-search-wrap {
             display: flex;
             gap: 0;
@@ -147,6 +173,7 @@
             overflow: hidden;
             border: 1.5px solid var(--border-color);
         }
+
         .sidebar-search-wrap input {
             flex: 1;
             min-width: 0;
@@ -157,6 +184,7 @@
             font-size: 0.88rem;
             outline: none;
         }
+
         .sidebar-search-wrap button {
             padding: 0;
             width: 48px;
@@ -172,7 +200,11 @@
             justify-content: center;
             transition: background 0.2s;
         }
-        .sidebar-search-wrap button:hover { background: #1b5e20; }
+
+        .sidebar-search-wrap button:hover {
+            background: #1b5e20;
+        }
+
         .sidebar-cat-item {
             display: flex;
             justify-content: space-between;
@@ -184,8 +216,15 @@
             text-decoration: none;
             transition: color 0.2s;
         }
-        .sidebar-cat-item:last-child { border-bottom: none; }
-        .sidebar-cat-item:hover { color: var(--primary, #2e7d32); }
+
+        .sidebar-cat-item:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-cat-item:hover {
+            color: var(--primary, #2e7d32);
+        }
+
         .cat-count {
             background: #e8f5e9;
             color: #2e7d32;
@@ -194,6 +233,7 @@
             padding: 2px 8px;
             border-radius: 30px;
         }
+
         .recent-post-item {
             display: flex;
             gap: 12px;
@@ -202,7 +242,13 @@
             margin-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .recent-post-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .recent-post-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         .recent-post-thumb {
             width: 68px;
             height: 60px;
@@ -210,6 +256,7 @@
             object-fit: cover;
             flex-shrink: 0;
         }
+
         .recent-post-title {
             font-size: 0.85rem;
             font-weight: 600;
@@ -220,8 +267,16 @@
             display: block;
             transition: color 0.2s;
         }
-        .recent-post-title:hover { color: var(--primary, #2e7d32); }
-        .recent-post-date { font-size: 0.75rem; color: var(--text-muted); }
+
+        .recent-post-title:hover {
+            color: var(--primary, #2e7d32);
+        }
+
+        .recent-post-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
         .tag-badge {
             display: inline-block;
             padding: 4px 12px;
@@ -234,6 +289,7 @@
             transition: all 0.2s;
             margin: 3px;
         }
+
         .tag-badge:hover {
             background: var(--primary, #2e7d32);
             color: #fff;
@@ -251,6 +307,7 @@
             padding: 0.5rem 0.9rem;
             transition: all 0.2s;
         }
+
         .blog-pagination .page-item.active .page-link,
         .blog-pagination .page-item .page-link:hover {
             background: var(--primary, #2e7d32);
@@ -259,8 +316,15 @@
         }
 
         /* Dark mode */
-        [data-theme="dark"] .cat-count { background: #1b3a1b; color: #81c784; }
-        [data-theme="dark"] .sidebar-search-wrap input { background: #2c2c2c; border-color: #444; }
+        [data-theme="dark"] .cat-count {
+            background: #1b3a1b;
+            color: #81c784;
+        }
+
+        [data-theme="dark"] .sidebar-search-wrap input {
+            background: #2c2c2c;
+            border-color: #444;
+        }
     </style>
 </head>
 
@@ -271,7 +335,8 @@
             <div class="container-fluid p-0">
                 <div class="d-flex justify-content-between align-items-stretch">
                     <div class="top-bar-left d-flex align-items-center flex-grow-1 ps-5">
-                        <span><i class="bi bi-telephone-fill me-2 text-primary"></i> Call for Order : +00 555 888 222</span>
+                        <span><i class="bi bi-telephone-fill me-2 text-primary"></i> Call for Order : +00 555 888
+                            222</span>
                     </div>
                     <div class="top-bar-right pe-5">
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -292,11 +357,12 @@
                 </a>
 
                 <div class="d-flex align-items-center gap-2">
-                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme" style="margin: 0;">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn d-lg-none" aria-label="Toggle Theme"
+                        style="margin: 0;">
                         <i class="bi bi-sun-fill"></i>
                         <i class="bi bi-moon-stars-fill"></i>
                     </button>
-<button class="rtl-toggle-btn d-lg-none" aria-label="Toggle RTL" style="margin: 0;">RTL</button>
+                    <button class="rtl-toggle-btn d-lg-none" aria-label="Toggle RTL" style="margin: 0;">RTL</button>
                     <button class="navbar-toggler border-0 text-white p-0" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileNav">
                         <i class="bi bi-list fs-1 text-primary"></i>
@@ -307,7 +373,8 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
                         <li class="nav-item dropdown mx-2 border-0 click-triggered">
-                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu shadow-sm border-0 rounded-4 mt-2" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item rounded-3 px-3 py-2 m-1" href="index-2.html">Home 2</a></li>
@@ -325,18 +392,24 @@
                             <i class="bi bi-sun-fill"></i>
                             <i class="bi bi-moon-stars-fill"></i>
                         </button>
-<button class="rtl-toggle-btn d-none d-lg-block" aria-label="Toggle RTL">RTL</button>
-                        <a href="dashboard.html" class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center" aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
-                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i class="bi bi-person-fill"></i></a>
-                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i class="bi bi-cart-fill"></i></a>
+                        <button class="rtl-toggle-btn d-none d-lg-block" aria-label="Toggle RTL">RTL</button>
+                        <a href="dashboard.html"
+                            class="btn btn-primary rounded-pill px-3 ms-3 show-on-desktop align-items-center justify-content-center"
+                            aria-label="Dashboard"><i class="bi bi-grid-fill"></i></a>
+                        <a href="login.html" class="nav-icon-circle" aria-label="User Profile"><i
+                                class="bi bi-person-fill"></i></a>
+                        <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart"><i
+                                class="bi bi-cart-fill"></i></a>
                     </div>
                 </div>
 
                 <!-- Mobile Offcanvas Navigation -->
-                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+                <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav"
+                    aria-labelledby="mobileNavLabel">
                     <div class="offcanvas-header border-bottom">
                         <h5 class="offcanvas-title fw-bold text-primary" id="mobileNavLabel"></h5>
-                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="nav flex-column">
@@ -356,7 +429,7 @@
                         </ul>
                     </div>
                 </div>
-                </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -370,22 +443,30 @@
         background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&fit=crop&q=80') center center / cover no-repeat;
         background-attachment: fixed;
     ">
-        <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,35,10,0.75) 0%,rgba(30,80,30,0.60) 100%);z-index:1;"></div>
+        <div
+            style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,35,10,0.75) 0%,rgba(30,80,30,0.60) 100%);z-index:1;">
+        </div>
         <div class="container position-relative text-center" style="z-index:2;" data-aos="fade-up">
-            <span style="display:inline-block;background:rgba(255,255,255,0.12);color:#c5e1a5;font-size:0.76rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:30px;margin-bottom:1rem;backdrop-filter:blur(4px);">
+            <span
+                style="display:inline-block;background:rgba(255,255,255,0.12);color:#c5e1a5;font-size:0.76rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:30px;margin-bottom:1rem;backdrop-filter:blur(4px);">
                 <i class="bi bi-journal-richtext me-2"></i>Our Stories
             </span>
-            <h1 style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem;">
+            <h1
+                style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem;">
                 The Muddy Boots Blog
             </h1>
-            <nav aria-label="breadcrumb">
+            <p style="color:rgba(255,255,255,0.85);font-size:1.15rem;max-width:600px;margin:0 auto;">
+                Read our latest farm updates, seasonal recipes, and sustainability news.
+            </p>
+            <nav style="display:none;" aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
                     <li class="breadcrumb-item">
                         <a href="index.html" style="color:#c5e1a5;text-decoration:none;font-weight:500;">
                             <i class="bi bi-house-fill me-1"></i>Home
                         </a>
                     </li>
-                    <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.75);" aria-current="page">Blog</li>
+                    <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.75);" aria-current="page">Blog
+                    </li>
                 </ol>
             </nav>
         </div>
@@ -404,7 +485,8 @@
                         <div class="col-md-6" data-aos="fade-up">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=700&fit=crop&q=80" alt="Soil Health">
+                                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=700&fit=crop&q=80"
+                                        alt="Soil Health">
                                     <span class="blog-category-badge">Farm Updates</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -415,7 +497,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">Soil Health: Why Regenerative Farming Matters</a>
                                     </h3>
-                                    <p class="blog-excerpt">Our no-till techniques are improving the flavor of your carrots and sequestering tons of carbon per year on our farm.</p>
+                                    <p class="blog-excerpt">Our no-till techniques are improving the flavor of your
+                                        carrots and sequestering tons of carbon per year on our farm.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -425,7 +508,8 @@
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&fit=crop&q=80" alt="Roasted Vegetables">
+                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&fit=crop&q=80"
+                                        alt="Roasted Vegetables">
                                     <span class="blog-category-badge" style="background:#e65100;">Recipes</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -436,7 +520,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">Top 5 Roasted Vegetable Recipes for Winter</a>
                                     </h3>
-                                    <p class="blog-excerpt">Transform your weekly CSA box into warming, flavour-packed roasted dishes the whole family will love this winter.</p>
+                                    <p class="blog-excerpt">Transform your weekly CSA box into warming, flavour-packed
+                                        roasted dishes the whole family will love this winter.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -446,7 +531,8 @@
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&fit=crop&q=80" alt="Solar Farm">
+                                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&fit=crop&q=80"
+                                        alt="Solar Farm">
                                     <span class="blog-category-badge" style="background:#1565c0;">Sustainability</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -457,7 +543,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">Welcoming Our New Solar Array to the Farm</a>
                                     </h3>
-                                    <p class="blog-excerpt">We've installed 120 solar panels on our barn roof — powering our cold storage and reducing our carbon footprint by 40%.</p>
+                                    <p class="blog-excerpt">We've installed 120 solar panels on our barn roof — powering
+                                        our cold storage and reducing our carbon footprint by 40%.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -467,7 +554,8 @@
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=700&fit=crop&q=80" alt="Tomato Harvest">
+                                    <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=700&fit=crop&q=80"
+                                        alt="Tomato Harvest">
                                     <span class="blog-category-badge">Farm Updates</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -478,7 +566,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">The Great Tomato Harvest of 2026</a>
                                     </h3>
-                                    <p class="blog-excerpt">This season's heirloom tomato yield broke our farm record — here's the story behind a summer of sunshine and hard work.</p>
+                                    <p class="blog-excerpt">This season's heirloom tomato yield broke our farm record —
+                                        here's the story behind a summer of sunshine and hard work.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -488,7 +577,8 @@
                         <div class="col-md-6" data-aos="fade-up">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=700&fit=crop&q=80" alt="Salad Bowl">
+                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=700&fit=crop&q=80"
+                                        alt="Salad Bowl">
                                     <span class="blog-category-badge" style="background:#e65100;">Recipes</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -499,7 +589,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">Build the Perfect Winter Salad Bowl</a>
                                     </h3>
-                                    <p class="blog-excerpt">A hearty grain bowl packed with roasted root vegetables, crunchy seeds, and a tangy citrus dressing — perfect for cold days.</p>
+                                    <p class="blog-excerpt">A hearty grain bowl packed with roasted root vegetables,
+                                        crunchy seeds, and a tangy citrus dressing — perfect for cold days.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -509,7 +600,8 @@
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="blog-card h-100">
                                 <div class="blog-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&fit=crop&q=80" alt="Community Farm">
+                                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&fit=crop&q=80"
+                                        alt="Community Farm">
                                     <span class="blog-category-badge" style="background:#6a1b9a;">Community</span>
                                 </div>
                                 <div class="blog-card-body">
@@ -520,7 +612,8 @@
                                     <h3 class="blog-card-title">
                                         <a href="#">Meet Our Farmers: A Day in the Field</a>
                                     </h3>
-                                    <p class="blog-excerpt">We spent a full day with the people who grow your food — from sunrise chores to evening harvesting, here's their story.</p>
+                                    <p class="blog-excerpt">We spent a full day with the people who grow your food —
+                                        from sunrise chores to evening harvesting, here's their story.</p>
                                     <a href="#" class="blog-read-more">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -531,11 +624,13 @@
                     <!-- Pagination -->
                     <nav class="mt-5 mb-5 blog-pagination" aria-label="Blog pages">
                         <ul class="pagination justify-content-center mb-0">
-                            <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#"><i
+                                        class="bi bi-chevron-left"></i></a></li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -582,7 +677,8 @@
                         <div class="sidebar-widget-title">Recent Posts</div>
 
                         <div class="recent-post-item">
-                            <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=140&fit=crop&q=80" alt="Post" class="recent-post-thumb">
+                            <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=140&fit=crop&q=80"
+                                alt="Post" class="recent-post-thumb">
                             <div>
                                 <a href="#" class="recent-post-title">Soil Health: Why Regenerative Farming Matters</a>
                                 <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i>Mar 24, 2026</span>
@@ -590,7 +686,8 @@
                         </div>
 
                         <div class="recent-post-item">
-                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=140&fit=crop&q=80" alt="Post" class="recent-post-thumb">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=140&fit=crop&q=80"
+                                alt="Post" class="recent-post-thumb">
                             <div>
                                 <a href="#" class="recent-post-title">Top 5 Roasted Vegetable Recipes for Winter</a>
                                 <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i>Feb 12, 2026</span>
@@ -598,7 +695,8 @@
                         </div>
 
                         <div class="recent-post-item">
-                            <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=140&fit=crop&q=80" alt="Post" class="recent-post-thumb">
+                            <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=140&fit=crop&q=80"
+                                alt="Post" class="recent-post-thumb">
                             <div>
                                 <a href="#" class="recent-post-title">The Great Tomato Harvest of 2026</a>
                                 <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i>Jan 30, 2026</span>
@@ -629,125 +727,140 @@
 
             </div>
         </div>
-    <!-- Stay in the Loop -->
-    <section class="section-padding" style="
+        <!-- Stay in the Loop -->
+        <section class="section-padding" style="
             position: relative; 
             overflow: hidden; 
             background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&fit=crop&q=80') center center / cover no-repeat;
             background-attachment: fixed;
         ">
-        <!-- Dark overlay over bg image -->
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,10,0.78) 0%,rgba(30,80,30,0.70) 100%);z-index:1;"></div>
-
-        <div class="container text-center position-relative" style="z-index:2;" data-aos="fade-up">
-            <!-- Icon -->
-            <div class="mb-3">
-                <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:50%;backdrop-filter:blur(6px);">
-                    <i class="bi bi-envelope-heart-fill" style="font-size:1.75rem;color:#fff;"></i>
-                </span>
+            <!-- Dark overlay over bg image -->
+            <div
+                style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,10,0.78) 0%,rgba(30,80,30,0.70) 100%);z-index:1;">
             </div>
 
-            <h2 style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:0.5rem;">Stay in the Loop</h2>
-            <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto 2rem;">
-                Get weekly farm updates, harvest previews, seasonal recipes, and exclusive member-only deals — straight to your inbox.
-            </p>
-
-            <!-- Email form -->
-            <form class="d-flex flex-wrap justify-content-center gap-2 mb-4" onsubmit="return false;">
-                <div style="position:relative;flex:1;min-width:260px;max-width:400px;">
-                    <i class="bi bi-envelope" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
-                    <input type="email" placeholder="Enter your email address" style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
+            <div class="container text-center position-relative" style="z-index:2;" data-aos="fade-up">
+                <!-- Icon -->
+                <div class="mb-3">
+                    <span
+                        style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:50%;backdrop-filter:blur(6px);">
+                        <i class="bi bi-envelope-heart-fill" style="font-size:1.75rem;color:#fff;"></i>
+                    </span>
                 </div>
-                <button type="submit" 
-                    style="padding:0.85rem 2rem;border-radius:10px;border:none;font-weight:700;font-size:0.95rem;background:var(--primary);color:#fff;cursor:pointer;transition:background 0.2s,transform 0.2s;white-space:nowrap;"
-                    onmouseover="this.style.background='#1b5e20';this.style.transform='translateY(-2px)'"
-                    onmouseout="this.style.background='#2e7d32';this.style.transform='none'">
-                    <i class="bi bi-send me-2"></i>Subscribe Now
-                </button>
-            </form>
 
-            <!-- Trust badges -->
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
-                    <i class="bi bi-shield-check-fill" style="color:#8bc34a;"></i> No spam, ever
-                </span>
-                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
-                    <i class="bi bi-x-circle-fill" style="color:#8bc34a;"></i> Unsubscribe anytime
-                </span>
-                <span style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
-                    <i class="bi bi-people-fill" style="color:#8bc34a;"></i> Join 2,000+ members
-                </span>
+                <h2
+                    style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:0.5rem;">
+                    Stay in the Loop</h2>
+                <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto 2rem;">
+                    Get weekly farm updates, harvest previews, seasonal recipes, and exclusive member-only deals —
+                    straight to your inbox.
+                </p>
+
+                <!-- Email form -->
+                <form class="d-flex flex-wrap justify-content-center gap-2 mb-4" onsubmit="return false;">
+                    <div style="position:relative;flex:1;min-width:260px;max-width:400px;">
+                        <i class="bi bi-envelope"
+                            style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.45);font-size:1rem;pointer-events:none;"></i>
+                        <input type="email" placeholder="Enter your email address"
+                            style="width:100%;padding:0.85rem 1rem 0.85rem 2.7rem;border-radius:10px;border:none;font-size:0.95rem;outline:none;background:#fff;color:#333;">
+                    </div>
+                    <button type="submit"
+                        style="padding:0.85rem 2rem;border-radius:10px;border:none;font-weight:700;font-size:0.95rem;background:var(--primary);color:#fff;cursor:pointer;transition:background 0.2s,transform 0.2s;white-space:nowrap;"
+                        onmouseover="this.style.background='#1b5e20';this.style.transform='translateY(-2px)'"
+                        onmouseout="this.style.background='#2e7d32';this.style.transform='none'">
+                        <i class="bi bi-send me-2"></i>Subscribe Now
+                    </button>
+                </form>
+
+                <!-- Trust badges -->
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <span
+                        style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                        <i class="bi bi-shield-check-fill" style="color:#8bc34a;"></i> No spam, ever
+                    </span>
+                    <span
+                        style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                        <i class="bi bi-x-circle-fill" style="color:#8bc34a;"></i> Unsubscribe anytime
+                    </span>
+                    <span
+                        style="color:rgba(255,255,255,0.75);font-size:0.82rem;display:flex;align-items:center;gap:6px;">
+                        <i class="bi bi-people-fill" style="color:#8bc34a;"></i> Join 2,000+ members
+                    </span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4 mb-5 text-start">
-                <div class="col-lg-4 col-md-12">
-                    <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
-                        <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light" style="height: 40px; width: auto;">
-                        <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark" style="height: 40px; width: auto;">
-                    </a>
-                    <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic farming since 2010. Real food for real people.</p>
-                    <div class="footer-social-icons mt-4">
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row g-4 mb-5 text-start">
+                    <div class="col-lg-4 col-md-12">
+                        <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                            <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="logo-on-light"
+                                style="height: 40px; width: auto;">
+                            <img src="assets/images/logo-light.svg" alt="GreenHarvest Logo" class="logo-on-dark"
+                                style="height: 40px; width: auto;">
+                        </a>
+                        <p class="text-muted pe-lg-5">Cultivating health and community through sustainable organic
+                            farming since 2010. Real food for real people.</p>
+                        <div class="footer-social-icons mt-4">
+                            <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h5 class="mb-4">Quick Links</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li class="mb-2"><a href="about.html">Our Story</a></li>
+                            <li class="mb-2"><a href="shop.html">Harvest Boxes</a></li>
+                            <li class="mb-2"><a href="blog.html">Farm Blog</a></li>
+                            <li class="mb-2"><a href="services.html">Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5 class="mb-4">Membership</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li class="mb-2"><a href="register.html">Join the CSA</a></li>
+                            <li class="mb-2"><a href="login.html">Member Login</a></li>
+                            <li class="mb-2"><a href="dashboard.html">My Subscription</a></li>
+                            <li class="mb-2"><a href="contact.html">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5 class="mb-4">Visit Us</h5>
+                        <ul class="list-unstyled footer-info">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <span>123 Farm Lane, Green Valley, GV 12345</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <span>(555) 123-4567</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-envelope text-primary me-2"></i>
+                                <span>hello@greenharvest.farm</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="mb-4">Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="about.html">Our Story</a></li>
-                        <li class="mb-2"><a href="shop.html">Harvest Boxes</a></li>
-                        <li class="mb-2"><a href="blog.html">Farm Blog</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="mb-4">Membership</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="register.html">Join the CSA</a></li>
-                        <li class="mb-2"><a href="login.html">Member Login</a></li>
-                        <li class="mb-2"><a href="dashboard.html">My Subscription</a></li>
-                        <li class="mb-2"><a href="contact.html">Support</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="mb-4">Visit Us</h5>
-                    <ul class="list-unstyled footer-info">
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <span>123 Farm Lane, Green Valley, GV 12345</span>
-                        </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="bi bi-telephone text-primary me-2"></i>
-                            <span>(555) 123-4567</span>
-                        </li>
-                        <li class="mb-3 d-flex align-items-start">
-                            <i class="bi bi-envelope text-primary me-2"></i>
-                            <span>hello@greenharvest.farm</span>
-                        </li>
-                    </ul>
+                <hr class="opacity-10">
+                <div class="text-center py-4">
+                    <p class="mb-0 text-muted small">&copy; 2026 GreenHarvest CSA. All rights reserved. Designed with <i
+                            class="bi bi-heart-fill text-accent"></i> for the Earth.</p>
                 </div>
             </div>
-            <hr class="opacity-10">
-            <div class="text-center py-4">
-                <p class="mb-0 text-muted small">&copy; 2026 GreenHarvest CSA. All rights reserved. Designed with <i class="bi bi-heart-fill text-accent"></i> for the Earth.</p>
-            </div>
+        </footer>
+
+        <!-- Back to Top -->
+        <div id="back-to-top" title="Back to Top">
+            <i class="bi bi-arrow-up"></i>
         </div>
-    </footer>
 
-    <!-- Back to Top -->
-    <div id="back-to-top" title="Back to Top">
-        <i class="bi bi-arrow-up"></i>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
 </body>
 
 </html>

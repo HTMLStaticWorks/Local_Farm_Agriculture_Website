@@ -164,17 +164,10 @@
 
                 <!-- Register Form -->
                 <form class="needs-validation" novalidate>
-                    <div class="row g-2 mb-2">
-                        <div class="col-md-6">
-                            <label class="form-label" for="regFirst">First Name</label>
-                            <input id="regFirst" type="text" class="form-control" placeholder="John" required>
-                            <div class="invalid-feedback">First name is required.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="regLast">Last Name</label>
-                            <input id="regLast" type="text" class="form-control" placeholder="Doe" required>
-                            <div class="invalid-feedback">Last name is required.</div>
-                        </div>
+                    <div class="mb-2">
+                        <label class="form-label" for="regName">Full Name</label>
+                        <input id="regName" type="text" class="form-control" placeholder="John Doe" required>
+                        <div class="invalid-feedback">Full name is required.</div>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="regEmail">Email Address</label>
@@ -189,17 +182,10 @@
                             <option value="premium">Premium Farm Feast ($75/wk)</option>
                         </select>
                     </div>
-                    <div class="row g-2 mb-3">
-                        <div class="col-md-6">
-                            <label class="form-label" for="regPass">Password</label>
-                            <input id="regPass" type="password" class="form-control" placeholder="••••••••" required minlength="8">
-                            <div class="invalid-feedback">At least 8 characters.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="regConfirm">Confirm Password</label>
-                            <input id="regConfirm" type="password" class="form-control" placeholder="••••••••" required>
-                            <div class="invalid-feedback">Passwords must match.</div>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="regPass">Password</label>
+                        <input id="regPass" type="password" class="form-control" placeholder="••••••••" required minlength="8">
+                        <div class="invalid-feedback">At least 8 characters.</div>
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="termsCheck" required>
