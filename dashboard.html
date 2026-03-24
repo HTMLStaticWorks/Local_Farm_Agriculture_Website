@@ -46,15 +46,31 @@
             background: var(--bg-alt);
             min-height: 100vh;
         }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .sidebar {
+                width: 260px !important;
+                flex: 0 0 260px !important;
+                max-width: 260px !important;
+            }
+            .dashboard-content {
+                width: calc(100% - 260px) !important;
+                flex: 0 0 calc(100% - 260px) !important;
+                max-width: calc(100% - 260px) !important;
+            }
+            .sidebar .brand-logo {
+                height: 28px !important;
+            }
+        }
     </style>
 </head>
 
 <body data-dashboard="admin">
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row g-0">
             <!-- Sidebar Navigation -->
-            <div class="col-lg-2 p-0 sidebar bg-white d-none d-lg-block sticky-top">
+            <div class="col-lg-3 col-xl-2 p-0 sidebar bg-white d-none d-lg-block sticky-top">
                 <div class="p-4 border-bottom mb-4">
                     <a class="navbar-brand d-flex align-items-center" href="index.html">
                         <img src="assets/images/logo-dark.svg" alt="GreenHarvest Logo" class="brand-logo logo-on-light">
@@ -85,7 +101,7 @@
             </div>
 
             <!-- Main Content -->
-            <div class="col-lg-10 p-0 dashboard-content d-flex flex-column"
+            <div class="col-lg-9 col-xl-10 p-0 dashboard-content d-flex flex-column"
                 style="background-color: var(--bg-alt); min-height: 100vh;">
                 <header class="dashboard-header bg-white shadow-sm py-3 px-4 mb-4 sticky-top">
                     <!-- Top Row: Logo & Actions -->
@@ -400,10 +416,10 @@
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4 pb-4 border-bottom">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="bi bi-house me-2"></i> Home</a></li>
+                <li class="nav-item"><a href="shop.html" class="nav-link"><i class="bi bi-cart me-2"></i> Shop</a></li>
                 <li class="nav-item"><a href="#overview" class="nav-link active" data-bs-toggle="pill"><i
                             class="bi bi-speedometer2 me-2"></i> Overview</a></li>
-                <li class="nav-item"><a href="#orders" class="nav-link" data-bs-toggle="pill"><i
-                            class="bi bi-cart-check me-2"></i> Orders</a></li>
                 <li class="nav-item"><a href="#customers" class="nav-link" data-bs-toggle="pill"><i
                             class="bi bi-people me-2"></i> Customers</a></li>
                 <li class="nav-item"><a href="#inventory" class="nav-link" data-bs-toggle="pill"><i
