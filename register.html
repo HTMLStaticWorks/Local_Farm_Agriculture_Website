@@ -4,18 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create a GreenHarvest account to join our Organic CSA and start receiving fresh farm harvests.">
+    <meta name="description"
+        content="Create a GreenHarvest account to join our Organic CSA and start receiving fresh farm harvests.">
     <title>Register | GreenHarvest CSA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             overflow: hidden;
             background-color: #2E7D32;
@@ -39,7 +43,7 @@
             background: var(--bg-body);
             border-radius: 20px;
             padding: 2rem 2.25rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             width: 100%;
         }
 
@@ -49,76 +53,174 @@
             justify-content: center;
             margin-bottom: 1.5rem;
         }
-        .auth-logo img { height: var(--logo-height); width: auto; }
+
+        .auth-logo img {
+            height: var(--logo-height);
+            width: auto;
+        }
 
         .auth-form-box h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem; font-weight: 700;
-            color: var(--text-main); margin-bottom: 0.2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
             text-align: center;
         }
 
         .auth-form-box .auth-subtitle {
-            color: var(--text-muted); font-size: 0.88rem;
-            margin-bottom: 1.1rem; text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1.1rem;
+            text-align: center;
         }
 
         /* Social buttons */
         .social-login-btn {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            width: 100%; padding: 0.6rem 1rem; border-radius: 8px;
-            font-weight: 600; font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
             border: 1.5px solid var(--border-color);
-            background: var(--bg-body); color: var(--text-main);
-            cursor: pointer; transition: all 0.25s ease;
+            background: var(--bg-body);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.25s ease;
         }
-        .social-login-btn:hover { background: var(--bg-alt); border-color: var(--text-muted); transform: translateY(-1px); }
-        .social-login-btn .social-icon { display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-        .social-login-btn.google-btn .social-icon { color: #ea4335; }
-        .social-login-btn.facebook-btn .social-icon { color: #1877f2; }
+
+        .social-login-btn:hover {
+            background: var(--bg-alt);
+            border-color: var(--text-muted);
+            transform: translateY(-1px);
+        }
+
+        .social-login-btn .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .social-login-btn.google-btn .social-icon {
+            color: #ea4335;
+        }
+
+        .social-login-btn.facebook-btn .social-icon {
+            color: #1877f2;
+        }
 
         /* Divider */
         .auth-divider {
-            display: flex; align-items: center; gap: 12px;
-            margin: 0.75rem 0; color: var(--text-muted); font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0.75rem 0;
+            color: var(--text-muted);
+            font-size: 0.78rem;
         }
-        .auth-divider::before, .auth-divider::after {
-            content: ''; flex: 1; height: 1px; background: var(--border-color);
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
         }
 
         .auth-form-box .form-label {
-            font-size: 0.82rem; font-weight: 600;
-            color: var(--text-main); margin-bottom: 0.3rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
         }
+
         .auth-form-box .form-control,
         .auth-form-box .form-select {
             background: var(--bg-alt);
             border: 1.5px solid var(--border-color);
-            color: var(--text-main); border-radius: 8px;
-            padding: 0.5rem 0.85rem; font-size: 0.88rem;
+            color: var(--text-main);
+            border-radius: 8px;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.88rem;
         }
+
         .auth-form-box .form-control:focus,
         .auth-form-box .form-select:focus {
-            background: var(--bg-alt); border-color: var(--primary);
-            color: var(--text-main); box-shadow: 0 0 0 3px rgba(46,125,50,0.15);
+            background: var(--bg-alt);
+            border-color: var(--primary);
+            color: var(--text-main);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
         }
-        .auth-form-box .form-control::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+        .auth-form-box .form-control::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
 
         [data-theme="dark"] .auth-form-box .form-control,
         [data-theme="dark"] .auth-form-box .form-select {
-            background: #2c2c2c !important; border-color: #444 !important; color: #f8f9fa !important;
+            background: #2c2c2c !important;
+            border-color: #444 !important;
+            color: #f8f9fa !important;
         }
-        [data-theme="dark"] .social-login-btn { background: #1e1e1e; border-color: #444; color: #f8f9fa; }
-        [data-theme="dark"] .social-login-btn:hover { background: #2c2c2c; }
 
-        .auth-theme-toggle { position: absolute; top: 1.25rem; right: 1.5rem; z-index: 1060; }
+        [data-theme="dark"] .social-login-btn {
+            background: #1e1e1e;
+            border-color: #444;
+            color: #f8f9fa;
+        }
+
+        [data-theme="dark"] .social-login-btn:hover {
+            background: #2c2c2c;
+        }
+
+        .auth-theme-toggle {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.5rem;
+            z-index: 1060;
+        }
+
+        .auth-theme-toggle .theme-toggle-btn,
+        .auth-theme-toggle .rtl-toggle-btn {
+            color: #ffffff;
+        }
+
+        .auth-theme-toggle .theme-toggle-btn:hover,
+        .auth-theme-toggle .rtl-toggle-btn:hover {
+            color: #0000;
+        }
 
         @media (max-width: 768px) {
-            .auth-theme-toggle { top: 1rem; right: 1rem; }
-            .auth-brand-panel { display: none; }
-            .auth-form-panel { padding: 3rem 1rem 1rem; }
-            body, html { height: auto; overflow: auto; }
-            .auth-wrapper { height: auto; min-height: 100vh; padding: 4rem 1rem 2rem; }
+            .auth-theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .auth-brand-panel {
+                display: none;
+            }
+
+            .auth-form-panel {
+                padding: 3rem 1rem 1rem;
+            }
+
+            body,
+            html {
+                height: auto;
+                overflow: auto;
+            }
+
+            .auth-wrapper {
+                height: auto;
+                min-height: 100vh;
+                padding: 4rem 1rem 2rem;
+            }
         }
     </style>
 </head>
@@ -131,7 +233,7 @@
             <i class="bi bi-sun-fill"></i>
             <i class="bi bi-moon-stars-fill"></i>
         </button>
-<button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+        <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
     </div>
 
     <div class="auth-wrapper position-relative overflow-hidden">
@@ -139,12 +241,15 @@
         <!-- Background Decorations -->
         <div class="bg-decoration pos-1 float-leaf" style="color: #fff; opacity: 0.15; z-index: 0;">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
-        <div class="bg-decoration pos-4 float-leaf" style="color: #fff; opacity: 0.15; z-index: 0; transform: rotate(180deg);">
+        <div class="bg-decoration pos-4 float-leaf"
+            style="color: #fff; opacity: 0.15; z-index: 0; transform: rotate(180deg);">
             <svg class="decoration-leaf" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                <path
+                    d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
         </div>
 
@@ -184,12 +289,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="regPass">Password</label>
-                        <input id="regPass" type="password" class="form-control" placeholder="••••••••" required minlength="8">
+                        <input id="regPass" type="password" class="form-control" placeholder="••••••••" required
+                            minlength="8">
                         <div class="invalid-feedback">At least 8 characters.</div>
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="termsCheck" required>
-                        <label class="form-check-label small text-muted" for="termsCheck">I agree to the <a href="#" class="text-primary fw-semibold">Terms and Conditions</a></label>
+                        <label class="form-check-label small text-muted" for="termsCheck">I agree to the <a href="#"
+                                class="text-primary fw-semibold">Terms and Conditions</a></label>
                         <div class="invalid-feedback">You must agree before submitting.</div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Become a Member</button>
@@ -212,7 +319,8 @@
                         </div>
                     </div>
 
-                    <p class="auth-subtitle mt-4 mb-0">Already a member? <a href="login.html" class="fw-bold text-primary">Sign in here</a></p>
+                    <p class="auth-subtitle mt-4 mb-0">Already a member? <a href="login.html"
+                            class="fw-bold text-primary">Sign in here</a></p>
                 </form>
 
             </div>
@@ -225,5 +333,3 @@
 </body>
 
 </html>
-
-
