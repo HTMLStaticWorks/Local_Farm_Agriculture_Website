@@ -184,6 +184,9 @@
             top: 1.25rem;
             right: 1.5rem;
             z-index: 1060;
+            display: flex !important;
+            align-items: center;
+            gap: 12px;
         }
 
         .auth-theme-toggle .theme-toggle-btn,
@@ -303,18 +306,24 @@
 
                     <div class="auth-divider">or join with</div>
 
-                    <!-- Social Signup - Same Line -->
+                    <!-- Social Signup - Stacked -->
                     <div class="row g-2 mb-1">
-                        <div class="col-6">
-                            <button type="button" class="social-login-btn google-btn">
-                                <span class="social-icon"><i class="bi bi-google"></i></span>
-                                Google
+                        <div class="col-12">
+                            <button type="button" class="social-login-btn apple-btn">
+                                <span class="social-icon"><i class="bi bi-apple"></i></span>
+                                Join with Apple
                             </button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
+                            <button type="button" class="social-login-btn google-btn">
+                                <span class="social-icon"><i class="bi bi-google"></i></span>
+                                Join with Google
+                            </button>
+                        </div>
+                        <div class="col-12">
                             <button type="button" class="social-login-btn facebook-btn">
                                 <span class="social-icon"><i class="bi bi-facebook"></i></span>
-                                Facebook
+                                Join with Facebook
                             </button>
                         </div>
                     </div>

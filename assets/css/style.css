@@ -817,6 +817,70 @@ a {
     margin-inline-start: 12px;
 }
 
+@media (max-width: 1023.98px) {
+    .nav-icon-circle {
+        width: 36px;
+        height: 36px;
+        margin-inline-start: 10px !important;
+    }
+
+    /* Offcanvas Menu Adjustments */
+    .mobile-nav-offcanvas .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-nav-offcanvas .nav {
+        flex: 1;
+    }
+
+    .offcanvas-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        border-top: 1px solid var(--border-color);
+        margin-top: 2rem;
+    }
+
+    .offcanvas-body .btn,
+    .mobile-nav-offcanvas .nav-link {
+        height: 50px !important;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: flex !important;
+        align-items: center;
+        width: 100%;
+        padding: 0 25px !important;
+        margin-bottom: 5px;
+        border-radius: 12px;
+        transition: all 0.2s;
+    }
+
+    .offcanvas-body .btn {
+        justify-content: center;
+    }
+
+    .mobile-nav-offcanvas .nav-link {
+        color: var(--text-main);
+        justify-content: flex-start;
+    }
+
+    .mobile-nav-offcanvas .nav-link.active {
+        background: transparent !important;
+        color: var(--primary) !important;
+        font-weight: 800;
+    }
+
+    /* Auth Toggles Alignment */
+    .auth-theme-toggle {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
 .nav-icon-circle:hover {
     background: var(--primary);
     color: #fff;
@@ -1423,4 +1487,25 @@ section .container {
 /* Footer info spans inside contact page */
 [data-theme="dark"] .footer-info span {
     color: var(--text-muted) !important;
+}
+
+/* Social Login Buttons */
+.social-login-btn.apple-btn {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.social-login-btn.apple-btn:hover {
+    background-color: #333 !important;
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .social-login-btn.apple-btn {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+[data-theme="dark"] .social-login-btn.apple-btn:hover {
+    background-color: #eee !important;
 }

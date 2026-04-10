@@ -184,6 +184,9 @@
             top: 1.25rem;
             right: 1.5rem;
             z-index: 1060;
+            display: flex !important;
+            align-items: center;
+            gap: 12px;
         }
 
         .auth-theme-toggle .theme-toggle-btn,
@@ -299,18 +302,24 @@
 
                     <div class="auth-divider">or continue with</div>
 
-                    <!-- Social Login - Same Line -->
+                    <!-- Social Login - Stacked -->
                     <div class="row g-2 mb-2">
-                        <div class="col-6">
-                            <button type="button" class="social-login-btn google-btn">
-                                <span class="social-icon"><i class="bi bi-google"></i></span>
-                                Google
+                        <div class="col-12">
+                            <button type="button" class="social-login-btn apple-btn">
+                                <span class="social-icon"><i class="bi bi-apple"></i></span>
+                                Continue with Apple
                             </button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
+                            <button type="button" class="social-login-btn google-btn">
+                                <span class="social-icon"><i class="bi bi-google"></i></span>
+                                Continue with Google
+                            </button>
+                        </div>
+                        <div class="col-12">
                             <button type="button" class="social-login-btn facebook-btn">
                                 <span class="social-icon"><i class="bi bi-facebook"></i></span>
-                                Facebook
+                                Continue with Facebook
                             </button>
                         </div>
                     </div>

@@ -47,11 +47,18 @@
                 </a>
 
                 <div class="d-flex align-items-center gap-2">
-                    <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme" style="margin: 0;">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn d-none d-lg-block" aria-label="Toggle Theme" style="margin: 0;">
                         <i class="bi bi-sun-fill"></i>
                         <i class="bi bi-moon-stars-fill"></i>
                     </button>
-                    <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                    <button class="rtl-toggle-btn d-none d-lg-block" aria-label="Toggle RTL" style="margin: 0;">RTL</button>
+                    <a href="shop.html" class="nav-icon-circle" aria-label="Shopping Cart" style="margin: 0;">
+                        <i class="bi bi-cart-fill"></i>
+                    </a>
+                    <button class="navbar-toggler border-0 text-white p-0 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileNav">
+                        <i class="bi bi-list fs-1 text-primary"></i>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -82,6 +89,39 @@
                 <a href="index.html" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm">
                     <i class="bi bi-house-door-fill me-2"></i>Back to Home
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Offcanvas Navigation -->
+    <div class="offcanvas offcanvas-end mobile-nav-offcanvas" tabindex="-1" id="mobileNav"
+        aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold text-primary" id="mobileNavLabel"></h5>
+            <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item mt-3">
+                    <a href="register.html" class="btn btn-outline-primary w-100 rounded-pill">Sign Up</a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="dashboard.html" class="btn btn-primary w-100 rounded-pill">Dashboard</a>
+                </li>
+            </ul>
+            <div class="offcanvas-actions mt-auto">
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="bi bi-sun-fill"></i>
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
             </div>
         </div>
     </div>
