@@ -20,14 +20,13 @@
     <style>
         html,
         body {
-            height: 100%;
-            overflow: hidden;
+            min-height: 100%;
             background-color: #2E7D32;
         }
 
         .auth-wrapper {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
             align-items: center;
             justify-content: center;
             padding: 1rem;
@@ -274,12 +273,12 @@
                 <form class="needs-validation" novalidate>
                     <div class="mb-2">
                         <label class="form-label" for="regName">Full Name</label>
-                        <input id="regName" type="text" class="form-control" placeholder="John Doe" required>
+                        <input id="regName" type="text" class="form-control" placeholder="Enter Your Name" required>
                         <div class="invalid-feedback">Full name is required.</div>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="regEmail">Email Address</label>
-                        <input id="regEmail" type="email" class="form-control" placeholder="john@example.com" required>
+                        <input id="regEmail" type="email" class="form-control" placeholder="EMAIL_ADDRESS" required>
                         <div class="invalid-feedback">Please provide a valid email.</div>
                     </div>
                     <div class="mb-2">
@@ -292,8 +291,24 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="regPass">Password</label>
-                        <input id="regPass" type="password" class="form-control" placeholder="••••••••" required
-                            minlength="8">
+                        <div class="input-group">
+                            <input id="regPass" type="password" class="form-control" placeholder="Enter Password"
+                                required minlength="8">
+                            <button class="btn password-toggle" type="button">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
+                        <div class="invalid-feedback">At least 8 characters.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="regPass">Confirm Password</label>
+                        <div class="input-group">
+                            <input id="regPass" type="password" class="form-control" placeholder="Confirm Password"
+                                required minlength="8">
+                            <button class="btn password-toggle" type="button">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
                         <div class="invalid-feedback">At least 8 characters.</div>
                     </div>
                     <div class="mb-3 form-check">

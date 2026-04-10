@@ -20,14 +20,13 @@
     <style>
         html,
         body {
-            height: 100%;
-            overflow: hidden;
+            min-height: 100%;
             background-color: #2E7D32;
         }
 
         .auth-wrapper {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
             align-items: center;
             justify-content: center;
             padding: 1rem;
@@ -280,12 +279,18 @@
                 <form class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label class="form-label" for="loginEmail">Email Address</label>
-                        <input id="loginEmail" type="email" class="form-control" placeholder="name@email.com" required>
+                        <input id="loginEmail" type="email" class="form-control" placeholder="EMAIL_ADDRESS" required>
                         <div class="invalid-feedback">Please enter a valid email address.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="loginPassword">Password</label>
-                        <input id="loginPassword" type="password" class="form-control" placeholder="••••••••" required>
+                        <div class="input-group">
+                            <input id="loginPassword" type="password" class="form-control" placeholder="Enter Password"
+                                required>
+                            <button class="btn password-toggle" type="button">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
                         <div class="invalid-feedback">Please enter your password.</div>
                     </div>
 

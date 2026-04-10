@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initFormValidation();
     initMobileMenu();
+    initPasswordToggle();
 });
 
 // 1. Theme Management (Light/Dark)
@@ -89,7 +90,7 @@ function initStickyHeader() {
 // 4. Scroll Animations (AOS style)
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('[data-aos]');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -121,12 +122,12 @@ function initMobileMenu() {
     // 7. Click-Triggered Dropdowns
     const clickDropdowns = document.querySelectorAll('.click-triggered .dropdown-toggle');
     clickDropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
+        dropdown.addEventListener('click', function (e) {
             if (window.innerWidth >= 992) {
                 e.preventDefault();
                 const parent = this.parentElement;
                 const menu = this.nextElementSibling;
-                
+
                 // Close other open click-triggered dropdowns
                 document.querySelectorAll('.click-triggered').forEach(other => {
                     if (other !== parent) {
@@ -151,5 +152,26 @@ function initMobileMenu() {
                 if (menu) menu.classList.remove('show');
             });
         }
+    });
+}
+
+// 7. Password Visibility Toggle
+function initPasswordToggle() {
+    const toggles = document.querySelectorAll('.password-toggle');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const input = this.previousElementSibling;
+            const icon = this.querySelector('i');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            }
+        });
     });
 }
